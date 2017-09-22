@@ -24,7 +24,38 @@
 		9EAC91041F74A837004FA02E /* ImageLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC91021F74A834004FA02E /* ImageLoopView.swift */; };
 		9EAC91051F74A83A004FA02E /* ImageRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC91031F74A834004FA02E /* ImageRollView.swift */; };
 		9EAC91071F74A8B5004FA02E /* QRCode.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC91061F74A8B5004FA02E /* QRCode.xcassets */; };
+		9EAC91121F74B3D9004FA02E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC91111F74B3D9004FA02E /* AppDelegate.swift */; };
+		9EAC91141F74B3D9004FA02E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC91131F74B3D9004FA02E /* ViewController.swift */; };
+		9EAC91171F74B3D9004FA02E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC91151F74B3D9004FA02E /* Main.storyboard */; };
+		9EAC91191F74B3D9004FA02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC91181F74B3D9004FA02E /* Assets.xcassets */; };
+		9EAC911C1F74B3D9004FA02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */; };
+		9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; };
+		9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EAC91231F74B3F0004FA02E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EAC90C81F749F02004FA02E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EAC90D01F749F02004FA02E;
+			remoteInfo = BaseTools;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9EAC91251F74B3F0004FA02E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9EAC90D11F749F02004FA02E /* BaseTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +77,13 @@
 		9EAC91021F74A834004FA02E /* ImageLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoopView.swift; sourceTree = "<group>"; };
 		9EAC91031F74A834004FA02E /* ImageRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRollView.swift; sourceTree = "<group>"; };
 		9EAC91061F74A8B5004FA02E /* QRCode.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCode.xcassets; sourceTree = "<group>"; };
+		9EAC910F1F74B3D9004FA02E /* BaseToolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseToolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAC91111F74B3D9004FA02E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9EAC91131F74B3D9004FA02E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9EAC91161F74B3D9004FA02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9EAC91181F74B3D9004FA02E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9EAC911B1F74B3D9004FA02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9EAC911D1F74B3D9004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9EAC910C1F74B3D9004FA02E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				9EAC90D31F749F02004FA02E /* Sources */,
+				9EAC91101F74B3D9004FA02E /* BaseToolsDemo */,
 				9EAC90D21F749F02004FA02E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				9EAC90D11F749F02004FA02E /* BaseTools.framework */,
+				9EAC910F1F74B3D9004FA02E /* BaseToolsDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +228,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9EAC91101F74B3D9004FA02E /* BaseToolsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC91111F74B3D9004FA02E /* AppDelegate.swift */,
+				9EAC91131F74B3D9004FA02E /* ViewController.swift */,
+				9EAC91151F74B3D9004FA02E /* Main.storyboard */,
+				9EAC91181F74B3D9004FA02E /* Assets.xcassets */,
+				9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */,
+				9EAC911D1F74B3D9004FA02E /* Info.plist */,
+			);
+			path = BaseToolsDemo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -211,18 +272,42 @@
 			productReference = 9EAC90D11F749F02004FA02E /* BaseTools.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9EAC910E1F74B3D9004FA02E /* BaseToolsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EAC911E1F74B3D9004FA02E /* Build configuration list for PBXNativeTarget "BaseToolsDemo" */;
+			buildPhases = (
+				9EAC910B1F74B3D9004FA02E /* Sources */,
+				9EAC910C1F74B3D9004FA02E /* Frameworks */,
+				9EAC910D1F74B3D9004FA02E /* Resources */,
+				9EAC91251F74B3F0004FA02E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EAC91241F74B3F0004FA02E /* PBXTargetDependency */,
+			);
+			name = BaseToolsDemo;
+			productName = BaseToolsDemo;
+			productReference = 9EAC910F1F74B3D9004FA02E /* BaseToolsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9EAC90C81F749F02004FA02E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Charles;
 				TargetAttributes = {
 					9EAC90D01F749F02004FA02E = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					9EAC910E1F74B3D9004FA02E = {
+						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -233,6 +318,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9EAC90C71F749F02004FA02E;
 			productRefGroup = 9EAC90D21F749F02004FA02E /* Products */;
@@ -240,6 +326,7 @@
 			projectRoot = "";
 			targets = (
 				9EAC90D01F749F02004FA02E /* BaseTools */,
+				9EAC910E1F74B3D9004FA02E /* BaseToolsDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +337,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAC91071F74A8B5004FA02E /* QRCode.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAC910D1F74B3D9004FA02E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAC911C1F74B3D9004FA02E /* LaunchScreen.storyboard in Resources */,
+				9EAC91191F74B3D9004FA02E /* Assets.xcassets in Resources */,
+				9EAC91171F74B3D9004FA02E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +376,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9EAC910B1F74B3D9004FA02E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAC91141F74B3D9004FA02E /* ViewController.swift in Sources */,
+				9EAC91121F74B3D9004FA02E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9EAC91241F74B3F0004FA02E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EAC90D01F749F02004FA02E /* BaseTools */;
+			targetProxy = 9EAC91231F74B3F0004FA02E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9EAC91151F74B3D9004FA02E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EAC91161F74B3D9004FA02E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EAC911B1F74B3D9004FA02E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9EAC90D71F749F02004FA02E /* Debug */ = {
@@ -440,6 +573,40 @@
 			};
 			name = Release;
 		};
+		9EAC911F1F74B3D9004FA02E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B328S38QCC;
+				INFOPLIST_FILE = BaseToolsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pygeeks.BaseToolsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9EAC91201F74B3D9004FA02E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B328S38QCC;
+				INFOPLIST_FILE = BaseToolsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pygeeks.BaseToolsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +624,15 @@
 			buildConfigurations = (
 				9EAC90DA1F749F02004FA02E /* Debug */,
 				9EAC90DB1F749F02004FA02E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EAC911E1F74B3D9004FA02E /* Build configuration list for PBXNativeTarget "BaseToolsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EAC911F1F74B3D9004FA02E /* Debug */,
+				9EAC91201F74B3D9004FA02E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
