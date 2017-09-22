@@ -83,9 +83,13 @@ public class QRCodeScanViewController: BaseViewController {
         //1.获取输入设备（摄像头）
         let device = AVCaptureDevice.default(for: AVMediaType.video)
         
-        do {
+        guard let input = try? AVCaptureDeviceInput(device: device!) else {
+            return AVCaptureSession()
+        }
+        
+//        do {
             //2.根据输入设备创建输入对象
-            let input = try AVCaptureDeviceInput(device: device!)
+//            let input = try AVCaptureDeviceInput(device: device!)
             //3.创建元数据的输出对象
             let output = AVCaptureMetadataOutput()
             //4.设置代理监听输出对象输出的数据,在主线程中刷新
@@ -104,7 +108,6 @@ public class QRCodeScanViewController: BaseViewController {
             }
             
             // 7.告诉输出对象, 需要输出什么样的数据 (二维码还是条形码等) 要先创建会话才能设置
-            //[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode]
             output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
             
             // 8.创建预览图层
@@ -128,12 +131,12 @@ public class QRCodeScanViewController: BaseViewController {
             maskView.layer.mask = shapeLayer
             
             return session
-        } catch {
-            // TODO:- 错误处理
-            print("error")
-        }
+//        } catch {
+//            // TODO:- 错误处理
+//            print("error")
+//        }
         
-        return AVCaptureSession()//session
+        //session
     }()
     
     /// 计时器
@@ -196,7 +199,7 @@ public class QRCodeScanViewController: BaseViewController {
 }
 
 extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
-    public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    private func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         if metadataObjects.count > 0 {
             //1.停止扫描
             self.session.stopRunning()
