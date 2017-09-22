@@ -6,9 +6,46 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90DD1F74A5BF004FA02E /* Constant.swift */; };
+		9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E51F74A684004FA02E /* BaseBarButtonItem.swift */; };
+		9EAC90EC1F74A6E2004FA02E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E61F74A684004FA02E /* BaseNavigationController.swift */; };
+		9EAC90ED1F74A6E5004FA02E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E71F74A684004FA02E /* BaseTableViewController.swift */; };
+		9EAC90EE1F74A6E8004FA02E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E81F74A684004FA02E /* BaseViewController.swift */; };
+		9EAC90EF1F74A6EE004FA02E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E11F74A627004FA02E /* DateExtension.swift */; };
+		9EAC90F01F74A6F0004FA02E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E31F74A627004FA02E /* IntExtension.swift */; };
+		9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E21F74A627004FA02E /* StringExtension.swift */; };
+		9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E01F74A627004FA02E /* UIColorExtension.swift */; };
+		9EAC90F31F74A6FA004FA02E /* TableEmptyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90EA1F74A6CA004FA02E /* TableEmptyable.swift */; };
+		9EAC90F61F74A764004FA02E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90F51F74A760004FA02E /* Utils.swift */; };
+		9EAC90FC1F74A7C9004FA02E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90FA1F74A7C3004FA02E /* AlertView.swift */; };
+		9EAC90FD1F74A7CB004FA02E /* AlertViewDrawKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90FB1F74A7C3004FA02E /* AlertViewDrawKit.swift */; };
+		9EAC91001F74A801004FA02E /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90FF1F74A7FD004FA02E /* QRCodeScanViewController.swift */; };
+		9EAC91041F74A837004FA02E /* ImageLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC91021F74A834004FA02E /* ImageLoopView.swift */; };
+		9EAC91051F74A83A004FA02E /* ImageRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC91031F74A834004FA02E /* ImageRollView.swift */; };
+		9EAC91071F74A8B5004FA02E /* QRCode.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC91061F74A8B5004FA02E /* QRCode.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		9EAC90D11F749F02004FA02E /* BaseTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAC90D51F749F02004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EAC90DD1F74A5BF004FA02E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		9EAC90E01F74A627004FA02E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9EAC90E11F74A627004FA02E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		9EAC90E21F74A627004FA02E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		9EAC90E31F74A627004FA02E /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		9EAC90E51F74A684004FA02E /* BaseBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBarButtonItem.swift; sourceTree = "<group>"; };
+		9EAC90E61F74A684004FA02E /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		9EAC90E71F74A684004FA02E /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		9EAC90E81F74A684004FA02E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9EAC90EA1F74A6CA004FA02E /* TableEmptyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEmptyable.swift; sourceTree = "<group>"; };
+		9EAC90F51F74A760004FA02E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9EAC90FA1F74A7C3004FA02E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		9EAC90FB1F74A7C3004FA02E /* AlertViewDrawKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewDrawKit.swift; sourceTree = "<group>"; };
+		9EAC90FF1F74A7FD004FA02E /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
+		9EAC91021F74A834004FA02E /* ImageLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoopView.swift; sourceTree = "<group>"; };
+		9EAC91031F74A834004FA02E /* ImageRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRollView.swift; sourceTree = "<group>"; };
+		9EAC91061F74A8B5004FA02E /* QRCode.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCode.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +78,106 @@
 		9EAC90D31F749F02004FA02E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9EAC90F71F74A79C004FA02E /* ViewController */,
+				9EAC90E41F74A684004FA02E /* Base */,
+				9EAC90DF1F74A612004FA02E /* Extension */,
+				9EAC90DC1F74A538004FA02E /* Constant */,
+				9EAC90E91F74A6CA004FA02E /* Protocol */,
+				9EAC90F41F74A760004FA02E /* Utils */,
 				9EAC90D51F749F02004FA02E /* Info.plist */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		9EAC90DC1F74A538004FA02E /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90DD1F74A5BF004FA02E /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		9EAC90DF1F74A612004FA02E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90E11F74A627004FA02E /* DateExtension.swift */,
+				9EAC90E31F74A627004FA02E /* IntExtension.swift */,
+				9EAC90E21F74A627004FA02E /* StringExtension.swift */,
+				9EAC90E01F74A627004FA02E /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9EAC90E41F74A684004FA02E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90E51F74A684004FA02E /* BaseBarButtonItem.swift */,
+				9EAC90E61F74A684004FA02E /* BaseNavigationController.swift */,
+				9EAC90E71F74A684004FA02E /* BaseTableViewController.swift */,
+				9EAC90E81F74A684004FA02E /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9EAC90E91F74A6CA004FA02E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90EA1F74A6CA004FA02E /* TableEmptyable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9EAC90F41F74A760004FA02E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90F51F74A760004FA02E /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9EAC90F71F74A79C004FA02E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC91011F74A821004FA02E /* View */,
+				9EAC90F81F74A7B6004FA02E /* VC */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9EAC90F81F74A7B6004FA02E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90FE1F74A7F3004FA02E /* QRCode */,
+				9EAC90F91F74A7C3004FA02E /* AlertView */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		9EAC90F91F74A7C3004FA02E /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90FA1F74A7C3004FA02E /* AlertView.swift */,
+				9EAC90FB1F74A7C3004FA02E /* AlertViewDrawKit.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		9EAC90FE1F74A7F3004FA02E /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC90FF1F74A7FD004FA02E /* QRCodeScanViewController.swift */,
+				9EAC91061F74A8B5004FA02E /* QRCode.xcassets */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		9EAC91011F74A821004FA02E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC91021F74A834004FA02E /* ImageLoopView.swift */,
+				9EAC91031F74A834004FA02E /* ImageRollView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +222,7 @@
 				TargetAttributes = {
 					9EAC90D01F749F02004FA02E = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -114,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAC91071F74A8B5004FA02E /* QRCode.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +260,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAC90EE1F74A6E8004FA02E /* BaseViewController.swift in Sources */,
+				9EAC90FD1F74A7CB004FA02E /* AlertViewDrawKit.swift in Sources */,
+				9EAC90EF1F74A6EE004FA02E /* DateExtension.swift in Sources */,
+				9EAC91001F74A801004FA02E /* QRCodeScanViewController.swift in Sources */,
+				9EAC90F31F74A6FA004FA02E /* TableEmptyable.swift in Sources */,
+				9EAC91051F74A83A004FA02E /* ImageRollView.swift in Sources */,
+				9EAC90F01F74A6F0004FA02E /* IntExtension.swift in Sources */,
+				9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */,
+				9EAC90FC1F74A7C9004FA02E /* AlertView.swift in Sources */,
+				9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */,
+				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,
+				9EAC91041F74A837004FA02E /* ImageLoopView.swift in Sources */,
+				9EAC90F61F74A764004FA02E /* Utils.swift in Sources */,
+				9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */,
+				9EAC90ED1F74A6E5004FA02E /* BaseTableViewController.swift in Sources */,
+				9EAC90EC1F74A6E2004FA02E /* BaseNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +398,7 @@
 		9EAC90DA1F749F02004FA02E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -259,6 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pygeeks.BaseTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -267,6 +421,7 @@
 		9EAC90DB1F749F02004FA02E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
