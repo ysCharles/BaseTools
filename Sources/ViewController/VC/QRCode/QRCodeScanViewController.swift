@@ -199,7 +199,7 @@ public class QRCodeScanViewController: BaseViewController {
 }
 
 extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
-    private func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         if metadataObjects.count > 0 {
             //1.停止扫描
             self.session.stopRunning()
