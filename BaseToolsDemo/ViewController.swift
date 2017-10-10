@@ -24,6 +24,14 @@ class ViewController: UIViewController {
         btn.setTitleColor(UIColor.blue, for: .normal)
         btn.addTarget(self, action: #selector(tabPush), for: .touchUpInside)
         view.addSubview(btn)
+        
+        let person = Person(name: "Charles", age: 30)
+        print(person.serialize2JsonString()!)
+        let str = """
+            {"_name":"唐磊","_age": 30}
+        """
+        let p = Person.deserialize(from: str)
+        print(p)
     }
     
     @objc private func tabPush() {
@@ -40,5 +48,15 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+struct Person : Serializable {
+    enum CodingKeys: String, CodingKey {
+        case name = "_name"
+        case age = "_age"
+    }
+    
+    let name: String
+    let age: Int
 }
 
