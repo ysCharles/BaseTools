@@ -42,7 +42,7 @@ extension Serializable {
             let encodedData = try encoder.encode(self)
             return encodedData
         } catch {
-            print(error.localizedDescription)
+            print("encode error: \(error.localizedDescription)")
             return nil
         }
     }
@@ -66,7 +66,7 @@ extension Serializable {
             let obj = try decoder.decode(Self.self, from: data)
             return obj
         } catch {
-            print(error.localizedDescription)
+            print("decode error: \(error.localizedDescription)")
             return nil
         }
     }
