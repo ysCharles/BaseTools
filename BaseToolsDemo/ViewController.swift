@@ -25,10 +25,10 @@ class ViewController: UIViewController {
         btn.addTarget(self, action: #selector(tabPush), for: .touchUpInside)
         view.addSubview(btn)
         
-        let person = Person(name: "Charles", age: 30)
+        let person = Person(name: "Charles", age: 30, pet: Pet(name: "八公", desc: "一条忠犬"))
         print(person.serialize2JsonString()!)
         let str = """
-            {"_name":"唐磊","_age": 30}
+            {"name":"唐磊","age": 30,"pet":{"name":"小五","desc":"短毛猫"}}
         """
         let p = Person.deserialize(from: str)
         print(p)
@@ -51,12 +51,18 @@ class ViewController: UIViewController {
 }
 
 struct Person : Serializable {
-    enum CodingKeys: String, CodingKey {
-        case name = "_name"
-        case age = "_age"
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case name = "_name"
+//        case age = "_age"
+//    }
     
     let name: String
     let age: Int
+    let pet: Pet
+}
+
+struct Pet: Serializable {
+    let name: String
+    let desc: String
 }
 
