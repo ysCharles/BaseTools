@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             {"name":"唐磊","age": 30,"pet":{"name":"小五","desc":"短毛猫"}}
         """
         let p = Person.deserialize(from: str)
-        print(p)
+        print(p!)
     }
     
     @objc private func tabPush() {

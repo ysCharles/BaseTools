@@ -10,6 +10,9 @@
 		9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F9B8A1F8B76D900331087 /* Serializable.swift */; };
 		9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AFE6D1F750B7800981F73 /* NetUtils.swift */; };
+		9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
+		9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7731041F8DBE300044EF10 /* UIImageExtension.swift */; };
 		9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90DD1F74A5BF004FA02E /* Constant.swift */; };
 		9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E51F74A684004FA02E /* BaseBarButtonItem.swift */; };
 		9EAC90EC1F74A6E2004FA02E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E61F74A684004FA02E /* BaseNavigationController.swift */; };
@@ -34,8 +37,6 @@
 		9EAC911C1F74B3D9004FA02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */; };
 		9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; };
 		9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9EDE1D451F8C50E00024A6A6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
-		9EDE1D461F8C50E00024A6A6 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */,
-				9EDE1D461F8C50E00024A6A6 /* Alamofire.framework in Embed Frameworks */,
+				9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +68,7 @@
 		9E1F9B8A1F8B76D900331087 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9E2AFE6D1F750B7800981F73 /* NetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtils.swift; sourceTree = "<group>"; };
+		9E7731041F8DBE300044EF10 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9EAC90D11F749F02004FA02E /* BaseTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAC90D51F749F02004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EAC90DD1F74A5BF004FA02E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */,
-				9EDE1D451F8C50E00024A6A6 /* Alamofire.framework in Frameworks */,
+				9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +174,7 @@
 				9EAC90E31F74A627004FA02E /* IntExtension.swift */,
 				9EAC90E21F74A627004FA02E /* StringExtension.swift */,
 				9EAC90E01F74A627004FA02E /* UIColorExtension.swift */,
+				9E7731041F8DBE300044EF10 /* UIImageExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */,
 				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,
 				9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */,
+				9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */,
 				9EAC91041F74A837004FA02E /* ImageLoopView.swift in Sources */,
 				9EAC90F61F74A764004FA02E /* Utils.swift in Sources */,
 				9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */,
