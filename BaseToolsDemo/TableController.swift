@@ -20,6 +20,7 @@ class TableController: UIViewController {
         tableView?.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         view.addSubview(tableView!)
         
+        
         tableView!.delegate = self
         tableView!.dataSource = self
     }
@@ -42,6 +43,8 @@ extension TableControllerDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
+    
+    
 }
 
 typealias TableControllerDataSource = TableController

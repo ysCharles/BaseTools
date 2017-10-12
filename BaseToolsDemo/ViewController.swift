@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         view.addSubview(btn1)
         
 //        testJson()
-//        testNetUtils()
+        testNetUtils()
 //        testDic2Model()
     }
     
@@ -65,13 +65,30 @@ class ViewController: UIViewController {
     }
     
     func testDic2Model() {
-        let pDic  = ["name": "Charles", "age": 30, "pet":["name": "八公", "desc":"好狗一条"]] as Dictionary
-        print(pDic)
+        let pDic  = ["name": "Charles", "age": 30, "pet":["name": "八公", "desc":"好狗一条"]] as [String : Any]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: pDic, options: .prettyPrinted) else {
+            return
+        }
+        let jsonStr = String(data: jsonData, encoding: .utf8)
+        print(jsonStr!)
     }
     
     // MARK:- 网络工具测试
     func testNetUtils() {
-        NetUtils.getRequest(urlString: "https://httpbin.org/get", params:nil)
+        NetUtils.setAdapter(adapter: RequestHeaderAdapter(headers: ["token": "erqer34134f3fd1r13","name":"Charles","age":"31"]))
+//        NetUtils.getRequest(urlString: "https://httpbin.org/get", params:nil)
+        NetUtils.getRequest(urlString: "https://httpbin.org/get", params: nil, success: { (response) in
+            
+            print(response)
+        }) { (msg) in
+            print(msg)
+        }
+        
+        NetUtils.postRequest(urlString: "https://httpbin.org/post", params: nil, success: { (dic) in
+            print(dic)
+        }) { (msg) in
+            print(msg)
+        }
     }
 }
 
