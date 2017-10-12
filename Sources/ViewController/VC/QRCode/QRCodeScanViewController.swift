@@ -58,7 +58,9 @@ public class QRCodeScanViewController: BaseViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.session.startRunning()
+        if !self.session.isRunning {
+            self.session.startRunning()
+        }
         //计时器添加到循环中去
         self.link.add(to: RunLoop.main, forMode: .commonModes)
     }
@@ -108,7 +110,13 @@ public class QRCodeScanViewController: BaseViewController {
             }
             
             // 7.告诉输出对象, 需要输出什么样的数据 (二维码还是条形码等) 要先创建会话才能设置
-            output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+            output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr,
+                                          AVMetadataObject.ObjectType.code39,
+                                          AVMetadataObject.ObjectType.code128,
+                                          AVMetadataObject.ObjectType.code39Mod43,
+                                          AVMetadataObject.ObjectType.ean13,
+                                          AVMetadataObject.ObjectType.ean8,
+                                          AVMetadataObject.ObjectType.code93]
             
             // 8.创建预览图层
             let previewLayer = AVCaptureVideoPreviewLayer(session: session)
