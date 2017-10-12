@@ -37,6 +37,7 @@
 		9EAC911C1F74B3D9004FA02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */; };
 		9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; };
 		9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EDEC2C91F8EFDD000B0F56A /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2C81F8EFDD000B0F56A /* TableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		9EAC91181F74B3D9004FA02E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EAC911B1F74B3D9004FA02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EAC911D1F74B3D9004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EDEC2C81F8EFDD000B0F56A /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 				9EAC91181F74B3D9004FA02E /* Assets.xcassets */,
 				9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */,
 				9EAC911D1F74B3D9004FA02E /* Info.plist */,
+				9EDEC2C81F8EFDD000B0F56A /* TableController.swift */,
 			);
 			path = BaseToolsDemo;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDEC2C91F8EFDD000B0F56A /* TableController.swift in Sources */,
 				9EAC91141F74B3D9004FA02E /* ViewController.swift in Sources */,
 				9EAC91121F74B3D9004FA02E /* AppDelegate.swift in Sources */,
 			);

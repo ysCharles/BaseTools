@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "首页"
         
         let imgView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         imgView.image = Utils.createQRCode(qrString: "Hello BaseProject Framework", qrImageName: "test")
@@ -25,13 +26,16 @@ class ViewController: UIViewController {
         btn.addTarget(self, action: #selector(tabPush), for: .touchUpInside)
         view.addSubview(btn)
         
-        let person = Person(name: "Charles", age: 30, pet: Pet(name: "八公", desc: "一条忠犬"))
-        print(person.serialize2JsonString()!)
-        let str = """
-            {"name":"唐磊","age": 30,"pet":{"name":"小五","desc":"短毛猫"}}
-        """
-        let p = Person.deserialize(from: str)
-        print(p!)
+        let btn1 = UIButton(type: .custom)
+        btn1.frame = CGRect(x: 100, y: 290, width: 170, height: 30)
+        btn1.setTitle("push tableview", for: .normal)
+        btn1.setTitleColor(UIColor.blue, for: .normal)
+        btn1.addTarget(self, action: #selector(pushTableView), for: .touchUpInside)
+        view.addSubview(btn1)
+        
+//        testJson()
+//        testNetUtils()
+//        testDic2Model()
     }
     
     @objc private func tabPush() {
@@ -41,15 +45,37 @@ class ViewController: UIViewController {
         //        vc.navigationItem.title = "push VC"
         navigationController?.show(vc, sender: self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc private func pushTableView() {
+        let vc = Utils.getViewController(storyboardID: "TableController", fromStoryboard: "Main")
+        navigationController?.show(vc, sender: nil)
     }
 
 
+    
+    // MARK:- 编码解码测试
+    func testJson() {
+        let person = Person(name: "Charles", age: 30, pet: Pet(name: "八公", desc: "一条忠犬"))
+        print(person.serialize2JsonString()!)
+        let str = """
+            {"name":"唐磊","age": 30,"pet":{"name":"小五","desc":"短毛猫"}}
+        """
+        let p = Person.deserialize(from: str)
+        print(p!)
+    }
+    
+    func testDic2Model() {
+        let pDic  = ["name": "Charles", "age": 30, "pet":["name": "八公", "desc":"好狗一条"]] as Dictionary
+        print(pDic)
+    }
+    
+    // MARK:- 网络工具测试
+    func testNetUtils() {
+        NetUtils.getRequest(urlString: "https://httpbin.org/get", params:nil)
+    }
 }
 
+// MARK:- 编码使用的 结构体
 struct Person : Serializable {
 //    enum CodingKeys: String, CodingKey {
 //        case name = "_name"
