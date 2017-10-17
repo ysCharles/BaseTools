@@ -38,6 +38,10 @@
 		9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; };
 		9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EDEC2C91F8EFDD000B0F56A /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2C81F8EFDD000B0F56A /* TableController.swift */; };
+		9EDEC2CD1F8F690600B0F56A /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2CC1F8F690600B0F56A /* QRCodeReader.swift */; };
+		9EDEC2CF1F90465F00B0F56A /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2CE1F90465F00B0F56A /* QRCodeReaderResult.swift */; };
+		9EDEC2D21F90803000B0F56A /* QRCodeReaderViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2D11F90803000B0F56A /* QRCodeReaderViewBuilder.swift */; };
+		9EDEC2D41F9089EA00B0F56A /* DefaultReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2D31F9089EA00B0F56A /* DefaultReaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		9EAC911B1F74B3D9004FA02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EAC911D1F74B3D9004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EDEC2C81F8EFDD000B0F56A /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		9EDEC2CC1F8F690600B0F56A /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		9EDEC2CE1F90465F00B0F56A /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		9EDEC2D11F90803000B0F56A /* QRCodeReaderViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewBuilder.swift; sourceTree = "<group>"; };
+		9EDEC2D31F9089EA00B0F56A /* DefaultReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,8 +248,12 @@
 		9EAC90FE1F74A7F3004FA02E /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				9EDEC2D01F907E9100B0F56A /* DefaultView */,
 				9EAC90FF1F74A7FD004FA02E /* QRCodeScanViewController.swift */,
 				9EAC91061F74A8B5004FA02E /* QRCode.xcassets */,
+				9EDEC2CC1F8F690600B0F56A /* QRCodeReader.swift */,
+				9EDEC2CE1F90465F00B0F56A /* QRCodeReaderResult.swift */,
+				9EDEC2D11F90803000B0F56A /* QRCodeReaderViewBuilder.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -267,6 +279,14 @@
 				9EDEC2C81F8EFDD000B0F56A /* TableController.swift */,
 			);
 			path = BaseToolsDemo;
+			sourceTree = "<group>";
+		};
+		9EDEC2D01F907E9100B0F56A /* DefaultView */ = {
+			isa = PBXGroup;
+			children = (
+				9EDEC2D31F9089EA00B0F56A /* DefaultReaderView.swift */,
+			);
+			path = DefaultView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAC90EE1F74A6E8004FA02E /* BaseViewController.swift in Sources */,
+				9EDEC2D21F90803000B0F56A /* QRCodeReaderViewBuilder.swift in Sources */,
 				9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */,
+				9EDEC2CD1F8F690600B0F56A /* QRCodeReader.swift in Sources */,
+				9EDEC2CF1F90465F00B0F56A /* QRCodeReaderResult.swift in Sources */,
 				9EAC90FD1F74A7CB004FA02E /* AlertViewDrawKit.swift in Sources */,
 				9EAC90EF1F74A6EE004FA02E /* DateExtension.swift in Sources */,
 				9EAC91001F74A801004FA02E /* QRCodeScanViewController.swift in Sources */,
@@ -402,6 +425,7 @@
 				9EAC91041F74A837004FA02E /* ImageLoopView.swift in Sources */,
 				9EAC90F61F74A764004FA02E /* Utils.swift in Sources */,
 				9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */,
+				9EDEC2D41F9089EA00B0F56A /* DefaultReaderView.swift in Sources */,
 				9EAC90ED1F74A6E5004FA02E /* BaseTableViewController.swift in Sources */,
 				9EAC90EC1F74A6E2004FA02E /* BaseNavigationController.swift in Sources */,
 			);

@@ -39,8 +39,10 @@ class ViewController: UIViewController {
     }
     
     @objc private func tabPush() {
-        let vc = QRCodeScanViewController()
-        vc.succeessCallback = { msg in Utils.showAlertView(title: "扫描结果", message:  msg, confirmTitle: nil, cancelTitle: "取消", confirmAction: nil)}
+        let vc = QRCodeScanViewController(builder: QRCodeReaderViewBuilder(buildBlock: { (builder) in
+            builder.startScanningAtLoad = true
+        }))
+//        vc.succeessCallback = { msg in Utils.showAlertView(title: "扫描结果", message:  msg, confirmTitle: nil, cancelTitle: "取消", confirmAction: nil)}
         //        vc.view.backgroundColor = UIColor.blue
         //        vc.navigationItem.title = "push VC"
         navigationController?.show(vc, sender: self)
