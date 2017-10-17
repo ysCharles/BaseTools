@@ -42,14 +42,17 @@ class ViewController: UIViewController {
         let vc = QRCodeScanViewController(builder: QRCodeReaderViewBuilder(buildBlock: { (builder) in
             builder.startScanningAtLoad = true
         }))
-//        vc.succeessCallback = { msg in Utils.showAlertView(title: "扫描结果", message:  msg, confirmTitle: nil, cancelTitle: "取消", confirmAction: nil)}
-        //        vc.view.backgroundColor = UIColor.blue
-        //        vc.navigationItem.title = "push VC"
+        
+        vc.didFindCode = { (result) in
+            print(result)
+        }
+        
         navigationController?.show(vc, sender: self)
     }
     
     @objc private func pushTableView() {
         let vc = Utils.getViewController(storyboardID: "TableController", fromStoryboard: "Main")
+        
         navigationController?.show(vc, sender: nil)
     }
 

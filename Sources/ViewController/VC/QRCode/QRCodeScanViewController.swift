@@ -17,12 +17,25 @@ public class QRCodeScanViewController: BaseViewController {
         codeReader = builder.reader
         readerView = builder.readerView
         super.init(nibName: nil, bundle: nil)
-        codeReader.didFindCode = { /*[weak self]*/ resultAsObject in
-            print(resultAsObject)
+    }
+    
+    public var didFindCode: ((QRCodeReaderResult) -> Void)? {
+        set {
+            codeReader.didFindCode = newValue
         }
         
-        codeReader.didFailDecoding = { /*[weak self] in*/
-            print("扫描失败")
+        get {
+            return codeReader.didFindCode
+        }
+    }
+    
+    public var didFailDecoding: (() -> Void)? {
+        set {
+            codeReader.didFailDecoding = newValue
+        }
+        
+        get {
+            return codeReader.didFailDecoding
         }
     }
     
