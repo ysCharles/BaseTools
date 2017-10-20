@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0FB3631F99CF2D00D05889 /* LogUtils.swift */; };
 		9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F9B8A1F8B76D900331087 /* Serializable.swift */; };
 		9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AFE6D1F750B7800981F73 /* NetUtils.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E0FB3631F99CF2D00D05889 /* LogUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
 		9E1F9B8A1F8B76D900331087 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9E2AFE6D1F750B7800981F73 /* NetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtils.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				9EAC90F51F74A760004FA02E /* Utils.swift */,
 				9E2AFE6D1F750B7800981F73 /* NetUtils.swift */,
+				9E0FB3631F99CF2D00D05889 /* LogUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				9EAC91051F74A83A004FA02E /* ImageRollView.swift in Sources */,
 				9EAC90F01F74A6F0004FA02E /* IntExtension.swift in Sources */,
 				9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */,
+				9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */,
 				9EAC90FC1F74A7C9004FA02E /* AlertView.swift in Sources */,
 				9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */,
 				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,
