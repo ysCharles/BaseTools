@@ -57,4 +57,12 @@ extension UIButton {
     }
 }
 
+/// 清除所有图片缓存 这里只清除通过 Kingfisher 的缓存
+public func clearImageCache() {
+    let cache = KingfisherManager.shared.cache
+    cache.clearMemoryCache()
+    cache.clearDiskCache()
+    cache.cleanExpiredDiskCache()
+}
+
 
