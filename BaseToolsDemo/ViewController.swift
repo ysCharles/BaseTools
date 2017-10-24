@@ -16,7 +16,9 @@ class ViewController: UIViewController {
         navigationItem.title = "首页"
         
         let imgView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        imgView.image = Utils.createQRCode(qrString: "Hello BaseProject Framework", qrImageName: "test")
+        let img = UIImage(named:"WechatIMG160.jpeg")
+        imgView.setWebImage(urlString: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-1.jpg", placeHolder: img)
+//        imgView.image = Utils.createQRCode(qrString: "Hello BaseProject Framework", qrImageName: "test")
         view.addSubview(imgView)
         
         let btn = UIButton(type: .custom)
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
         view.addSubview(btn)
         
         let btn1 = UIButton(type: .custom)
+        btn1.setBackgroundWebImage(urlString: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-1.jpg", for: .normal)
         btn1.frame = CGRect(x: 100, y: 290, width: 170, height: 30)
         btn1.setTitle("push tableview", for: .normal)
         btn1.setTitleColor(UIColor.blue, for: .normal)

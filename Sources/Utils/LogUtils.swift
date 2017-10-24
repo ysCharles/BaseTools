@@ -8,7 +8,7 @@
 
 import Foundation
 // MARK:- 日志
-func proLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
+public func proLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
         print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
     #endif
