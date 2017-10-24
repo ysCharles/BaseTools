@@ -10,6 +10,9 @@ import Foundation
 import Alamofire
 import WebKit
 
+public typealias SuccessClosure = ([String: Any]) -> Void
+public typealias FailureClosure = (String) -> Void
+
 /// 网络请求工具
 public class NetUtils: NSObject {
     
@@ -21,13 +24,23 @@ public class NetUtils: NSObject {
     ///   - params: 提交参数
     ///   - success: 成功回调
     ///   - failure: 失败回调
+    /// - Returns: request 对应的 key 可用于取消 request 任务
     private func request(urlString: String,
                          method: HTTPMethod,
                          params: [String: Any]?,
-                         success: @escaping ([String: Any])->(),
-                         failure:@escaping (String)->()) {
+                         success: @escaping SuccessClosure,
+                         failure:@escaping FailureClosure) -> String {
+        // 获取key 并查看 requestTasks 中是否已存在请求任务，如果已存在 取消
+        let key = requestTaksKey(url: urlString, params: params)
+        if let task = requestTasks[key] {
+            task.cancel()
+        }
         let request = manager.request(urlString, method: method, parameters: params, encoding: URLEncoding.default, headers: nil)
-        request.responseJSON { (response) in
+        //新的请求 加入字典
+        requestTasks[key] = request
+        
+        request.responseJSON {[unowned self] (response) in
+            self.requestTasks.removeValue(forKey: key)
             switch response.result {
             case .success(let value):
                 guard let v = value as? [String: Any] else {
@@ -39,6 +52,8 @@ public class NetUtils: NSObject {
                 failure(error.localizedDescription)
             }
         }
+        
+        return key
     }
     
     /// 多文件上传
@@ -52,8 +67,8 @@ public class NetUtils: NSObject {
     private func upload(urlString: String,
                 data:[String: Any],
                 progressClosure: @escaping (Double)->Void,
-                success: @escaping ([String: Any])->(),
-                failure:@escaping (String)->()) {
+                success: @escaping SuccessClosure,
+                failure:@escaping FailureClosure) {
         manager.upload(multipartFormData: { (multipartFormData) in
             //判断数据字典里的数据类型 Data为上传文件， String 为 普通参数
             if data.count > 0 {
@@ -104,9 +119,25 @@ public class NetUtils: NSObject {
         manager = SessionManager.default
     }
     
+    /// 请求编码 key
+    ///
+    /// - Parameters:
+    ///   - url: url 地址
+    ///   - params: 参数
+    /// - Returns: 编码后的 key
+    private func requestTaksKey(url: String, params: [String: Any]? = nil) -> String {
+        guard let params = params,
+            let stringData = try? JSONSerialization.data(withJSONObject: params, options: []),
+            let paramString = String(data: stringData, encoding: .utf8) else {
+                return url
+        }
+        let str = "\(url)\(paramString)"
+        return str
+    }
+    
     // MARK:- 私有属性
     private let manager: SessionManager
-    private var requestDic = [String : Request]()
+    private var requestTasks = [String : Request]()
 }
 
 // MARK:- 公开方法 （get、 post、设置 request 适配器、upload）
@@ -118,11 +149,13 @@ extension NetUtils {
     ///   - params: 参数
     ///   - success: 请求成功回调
     ///   - failure: 请求失败回调
+    /// - Returns: request 对应的 key 可用于取消 request 任务
+    @discardableResult
     public static func getRequest(urlString: String,
                                   params: [String: Any]?,
-                                  success: @escaping ([String: Any])->(),
-                                  failure:@escaping (String)->()) {
-        shared.request(urlString: urlString, method: .get, params: params, success: success, failure: failure)
+                                  success: @escaping SuccessClosure,
+                                  failure:@escaping FailureClosure) -> String {
+        return shared.request(urlString: urlString, method: .get, params: params, success: success, failure: failure)
     }
     
     /// post 网络请求
@@ -132,11 +165,13 @@ extension NetUtils {
     ///   - params: 参数
     ///   - success: 请求陈宫回调
     ///   - failure: 请求失败回调
+    /// - Returns: request 对应的 key 可用于取消 request 任务
+    @discardableResult
     public  static func postRequest(urlString: String,
                                     params: [String: Any]?,
-                                    success: @escaping ([String: Any])->Void,
-                                    failure:@escaping (String)->Void) {
-        shared.request(urlString: urlString, method: .post, params: params, success: success, failure: failure)
+                                    success: @escaping SuccessClosure,
+                                    failure:@escaping FailureClosure) -> String {
+        return shared.request(urlString: urlString, method: .post, params: params, success: success, failure: failure)
     }
     
     /// 上传图片
@@ -150,14 +185,24 @@ extension NetUtils {
     public static func upload(urlString: String,
                               image: UIImage,
                               progress: @escaping (Double)->Void,
-                              success: @escaping ([String: Any])->Void,
-                              failure: @escaping (String)-> Void) {
+                              success: @escaping SuccessClosure,
+                              failure: @escaping FailureClosure) {
         // 压缩文件
         guard let imgData = image.zip2Data() else {
             failure("")
             return
         }
         shared.upload(urlString: urlString, data: ["image": imgData], progressClosure: progress, success: success, failure: failure)
+    }
+    
+    /// 取消网络请求
+    ///
+    /// - Parameter key: 网络请求对应的 key
+    public static func cancelRequest(forKey key: String) {
+        if let task = shared.requestTasks[key] {
+            task.cancel()
+            shared.requestTasks.removeValue(forKey: key)
+        }
     }
     
     
