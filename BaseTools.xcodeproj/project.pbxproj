@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		9EB7F58C1FA0753F00712DE8 /* CommonCryptoModuleMap */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9EB7F58F1FA0753F00712DE8 /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */;
+			buildPhases = (
+				9EB7F5901FA0755500712DE8 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CommonCryptoModuleMap;
+			productName = CommonCryptoModuleMap;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0FB3631F99CF2D00D05889 /* LogUtils.swift */; };
 		9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F9B8A1F8B76D900331087 /* Serializable.swift */; };
@@ -56,6 +70,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9EAC90D01F749F02004FA02E;
 			remoteInfo = BaseTools;
+		};
+		9EB7F5911FA075F200712DE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EAC90C81F749F02004FA02E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EB7F58C1FA0753F00712DE8;
+			remoteInfo = CommonCryptoModuleMap;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -328,6 +349,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9EB7F5921FA075F200712DE8 /* PBXTargetDependency */,
 			);
 			name = BaseTools;
 			productName = BaseTools;
@@ -372,6 +394,10 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
+					9EB7F58C1FA0753F00712DE8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 9EAC90CB1F749F02004FA02E /* Build configuration list for PBXProject "BaseTools" */;
@@ -389,6 +415,7 @@
 			targets = (
 				9EAC90D01F749F02004FA02E /* BaseTools */,
 				9EAC910E1F74B3D9004FA02E /* BaseToolsDemo */,
+				9EB7F58C1FA0753F00712DE8 /* CommonCryptoModuleMap */,
 			);
 		};
 /* End PBXProject section */
@@ -413,6 +440,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9EB7F5901FA0755500712DE8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This if-statement means we'll only run the main script if the CommonCryptoModuleMap directory doesn't exist\n# Because otherwise the rest of the script causes a full recompile for anything where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger the rest of the script to run\nif [ -d \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\" ]; then\necho \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap directory already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EAC90CC1F749F02004FA02E /* Sources */ = {
@@ -464,6 +507,11 @@
 			isa = PBXTargetDependency;
 			target = 9EAC90D01F749F02004FA02E /* BaseTools */;
 			targetProxy = 9EAC91231F74B3F0004FA02E /* PBXContainerItemProxy */;
+		};
+		9EB7F5921FA075F200712DE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EB7F58C1FA0753F00712DE8 /* CommonCryptoModuleMap */;
+			targetProxy = 9EB7F5911FA075F200712DE8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -614,6 +662,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -640,6 +692,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -695,6 +751,24 @@
 			};
 			name = Release;
 		};
+		9EB7F58D1FA0753F00712DE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+			};
+			name = Debug;
+		};
+		9EB7F58E1FA0753F00712DE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -721,6 +795,15 @@
 			buildConfigurations = (
 				9EAC911F1F74B3D9004FA02E /* Debug */,
 				9EAC91201F74B3D9004FA02E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EB7F58F1FA0753F00712DE8 /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EB7F58D1FA0753F00712DE8 /* Debug */,
+				9EB7F58E1FA0753F00712DE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

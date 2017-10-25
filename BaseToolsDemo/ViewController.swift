@@ -39,6 +39,7 @@ class ViewController: UIViewController {
 //        testJson()
         testNetUtils()
 //        testDic2Model()
+        testMD5()
     }
     
     @objc private func tabPush() {
@@ -57,6 +58,11 @@ class ViewController: UIViewController {
         let vc = Utils.getViewController(storyboardID: "TableController", fromStoryboard: "Main")
         
         navigationController?.show(vc, sender: nil)
+    }
+    
+    func testMD5() {
+        let str = "123456"
+        print(str.md5())
     }
 
 

@@ -61,7 +61,7 @@ extension TableControllerDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "TableCell")
         var str = "    测试空格 trim      "
-        str.trim()
+        str = str.trim()
         cell.textLabel?.text = "标题\(str)\(indexPath.section)"
         cell.detailTextLabel?.text = "详细内容\(indexPath.section)"
         return cell
