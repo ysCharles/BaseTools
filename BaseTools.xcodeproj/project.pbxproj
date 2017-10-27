@@ -25,9 +25,13 @@
 		9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F9B8A1F8B76D900331087 /* Serializable.swift */; };
 		9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AFE6D1F750B7800981F73 /* NetUtils.swift */; };
+		9E6852201FA1E285005E5879 /* TLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68521F1FA1E285005E5879 /* TLTextView.swift */; };
 		9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7731041F8DBE300044EF10 /* UIImageExtension.swift */; };
+		9E77B3281FA2F8D900A905B0 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77B3271FA2F8D800A905B0 /* SnapKit.framework */; };
+		9E77B3291FA2F8E300A905B0 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77B3271FA2F8D800A905B0 /* SnapKit.framework */; };
+		9E77B32A1FA2F8E300A905B0 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77B3271FA2F8D800A905B0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E86EF001F9F0F8A00DCAD9D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */; };
 		9E86EF011F9F0FC000DCAD9D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */; };
 		9E86EF021F9F0FC000DCAD9D /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -90,6 +94,7 @@
 				9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */,
 				9E86EF021F9F0FC000DCAD9D /* Kingfisher.framework in Embed Frameworks */,
 				9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */,
+				9E77B32A1FA2F8E300A905B0 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +106,9 @@
 		9E1F9B8A1F8B76D900331087 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9E2AFE6D1F750B7800981F73 /* NetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtils.swift; sourceTree = "<group>"; };
+		9E68521F1FA1E285005E5879 /* TLTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTextView.swift; sourceTree = "<group>"; };
 		9E7731041F8DBE300044EF10 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		9E77B3271FA2F8D800A905B0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9E86EF031F9F364800DCAD9D /* WebImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageExtension.swift; sourceTree = "<group>"; };
 		9EAC90D11F749F02004FA02E /* BaseTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E77B3281FA2F8D900A905B0 /* SnapKit.framework in Frameworks */,
 				9E86EF001F9F0F8A00DCAD9D /* Kingfisher.framework in Frameworks */,
 				9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */,
 			);
@@ -154,6 +162,7 @@
 				9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */,
 				9E86EF011F9F0FC000DCAD9D /* Kingfisher.framework in Frameworks */,
 				9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */,
+				9E77B3291FA2F8E300A905B0 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +172,7 @@
 		9E2AFE6A1F750B1900981F73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E77B3271FA2F8D800A905B0 /* SnapKit.framework */,
 				9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */,
 				9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */,
 			);
@@ -298,6 +308,7 @@
 			children = (
 				9EAC91021F74A834004FA02E /* ImageLoopView.swift */,
 				9EAC91031F74A834004FA02E /* ImageRollView.swift */,
+				9E68521F1FA1E285005E5879 /* TLTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +492,7 @@
 				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,
 				9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */,
 				9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */,
+				9E6852201FA1E285005E5879 /* TLTextView.swift in Sources */,
 				9EAC91041F74A837004FA02E /* ImageLoopView.swift in Sources */,
 				9EAC90F61F74A764004FA02E /* Utils.swift in Sources */,
 				9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */,
