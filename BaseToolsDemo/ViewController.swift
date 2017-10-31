@@ -41,6 +41,10 @@ class ViewController: UIViewController {
 //        testDic2Model()
 //        testMD5()
         testTextView()
+        
+        test1()
+        test2()
+        test3()
     }
     
     private func testTextView() {
@@ -131,92 +135,82 @@ struct Pet: Serializable {
     let desc: String
 }
 
-//// MARK: - 测试 decode
-///// 只有状态值和提示信息的模型转化
-//struct ModelObjet: Decodable {
-//    /// 状态值
-//    var status:Int? = nil
-//    /// 提示信息
-//    var message:String? = nil
-//}
-//
-///// 转换成数组模型
-//struct ModelObjetT<T>: Decodable {
-//    /// 状态值
-//    var status:Int? = nil
-//    /// 提示信息
-//    var message:String? = nil
-//    /// 嵌套模型
-//    var data:T? = nil
-//}
-//
-///// 转换成数组模型
-//struct ModelArrayT<T>: Decodable {
-//    /// 状态值
-//    var status:Int? = nil
-//    /// 提示信息
-//    var message:String? = nil
-//    /// 嵌套模型
-//    var data:[T]? = nil
-//}
-//
-//extension Data {
-//    /// json data 转模型
-//    /// 可以直接拿网络请求成功的response直接转换
-//    func jsonDataMapModel<T>(_ type: T.Type) -> T? {
-//        let decoder = JSONDecoder()
-//        do {
-//            return try decoder.decode(T.self, from: self)
-//        } catch {
-//            print("解析失败\(self)")
-//            return nil
-//        }
-//    }
-//}
-//
-//extension String {
-//    /// json字符串转模型
-//    func jsonStringMapModel<T>(_ type: T.Type) -> T? {
-//
-//        if let jsonData = self.data(using: .utf8) {
-//            return jsonData.jsonDataMapModel(T.self)
-//        }
-//        print("解析失败\(self)")
-//        return nil
-//    }
-//}
-//
-//class Test1:Decodable {
-//    lazy var name: Double? = { return (Double(test ?? "0.00") ?? 0.00) * 100 }()
-//    /// 测试文字
-//    var test:String?
-//}
-//class Test2:Decodable {
-//    lazy var name: String? = { return "我是test_name转换之后的\(test_name ?? "")" }()
-//    /// 测试文字
-//    var test_name:String?
-//
-//    var detial:[Detial]?
-//
-//}
-//class Detial:Decodable {
-//    var detial_name: String?
-//}
-//
-//// json字符串一键转模型
-//func test1(){
-//    let jsonString = "{\"status\":1000,\"message\":\"操作成功\",\"data\":{\"test\":\"0.05\"}}"
+// MARK: - 测试 decode
+/// 只有状态值和提示信息的模型转化
+struct ModelObjet: Serializable {
+    /// 状态值
+    var status:Int? = nil
+    /// 提示信息
+    var message:String? = nil
+}
+
+/// 转换成数组模型
+struct ModelObjetT<T: Serializable>: Serializable {
+    /// 状态值
+    var status:Int? = nil
+    /// 提示信息
+    var message:String? = nil
+    /// 嵌套模型
+    var data:T? = nil
+}
+
+// 转换成数组模型
+struct ModelArrayT<T: Serializable>: Serializable {
+    /// 状态值
+    var status:Int? = nil
+    /// 提示信息
+    var message:String? = nil
+    /// 嵌套模型
+    var data:[T]? = nil
+}
+
+struct Test1: Serializable {
+    lazy var name: Double? = { return (Double(test ?? "0.00") ?? 0.00) * 100 }()
+    /// 测试文字
+    var test:String?
+}
+struct Test2: Serializable {
+    lazy var name: String? = { return "我是test_name转换之后的\(test_name ?? "")" }()
+    /// 测试文字
+    var test_name:String?
+
+    var detial:[Detial]?
+
+}
+struct Detial: Serializable {
+    var detial_name: String?
+}
+
+// json字符串一键转模型
+func test1(){
+    let jsonString = "{\"status\":1000,\"message\":\"操作成功\",\"data\":{\"test\":\"0.05\"}}"
 //    let model = jsonString.jsonStringMapModel(ModelObjetT<Test1>.self)
-//    print(model?.data?.test ?? "test无值")
-//    print(model?.data?.name ?? 0.00)
-//    print("============华丽的分割线==============")
-//}
-//func test2(){
-//    let jsonString = "{\"status\":1000,\"message\":\"操作成功\",\"data\":{\"test_name\":\"Decodable\",\"detial\":[{\"detial_name\":\"看吧嵌套毫无压力\"}]}}"
+    var model = ModelObjetT<Test1>.deserialize(from: jsonString)
+    print(model?.data?.test ?? "test无值")
+    print(model?.data?.name ?? 0.00)
+    print("============华丽的分割线==============")
+}
+func test2(){
+    let jsonString = "{\"status\":1000,\"message\":\"操作成功\",\"data\":{\"test_name\":\"Decodable\",\"detial\":[{\"detial_name\":\"看吧嵌套毫无压力\"}]}}"
 //    let model = jsonString.jsonStringMapModel(ModelObjetT<Test2>.self)
-//    print(model?.data?.test_name ?? "test无值")
-//    print(model?.data?.name ?? "name无值")
-//    print(model?.data?.detial?.first?.detial_name ?? "detial_name无值")
-//}
+    var model = ModelObjetT<Test2>.deserialize(from: jsonString)
+    print(model?.data?.test_name ?? "test无值")
+    print(model?.data?.name ?? "name无值")
+    print(model?.data?.detial?.first?.detial_name ?? "detial_name无值")
+}
+
+func test3() {
+    let jsonString = """
+        {
+            "status":1000,
+            "message":"操作成功",
+            "data":[
+                {"name":"Pet1","desc": "pet1 desc"},{"name":"Pet2","desc": "pet2 desc"},{"name":"Pet3","desc": "pet3 desc"},{"name":"Pet4","desc": "pet4 desc"},
+            ]
+        }
+    """
+    let model = ModelArrayT<Pet>.deserialize(from: jsonString)
+    print(model)
+}
 
 
