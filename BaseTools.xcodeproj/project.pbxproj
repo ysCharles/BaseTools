@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9E0F5B871FB3F83F00CFAAE7 /* SandBoxUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F5B861FB3F83F00CFAAE7 /* SandBoxUtils.swift */; };
 		9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0FB3631F99CF2D00D05889 /* LogUtils.swift */; };
 		9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F9B8A1F8B76D900331087 /* Serializable.swift */; };
 		9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
@@ -68,19 +69,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9E0F5B881FB3FE7600CFAAE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EAC90C81F749F02004FA02E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EB7F58C1FA0753F00712DE8;
+			remoteInfo = CommonCryptoModuleMap;
+		};
 		9EAC91231F74B3F0004FA02E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9EAC90C81F749F02004FA02E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9EAC90D01F749F02004FA02E;
 			remoteInfo = BaseTools;
-		};
-		9EB7F5911FA075F200712DE8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9EAC90C81F749F02004FA02E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9EB7F58C1FA0753F00712DE8;
-			remoteInfo = CommonCryptoModuleMap;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E0F5B861FB3F83F00CFAAE7 /* SandBoxUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxUtils.swift; sourceTree = "<group>"; };
 		9E0FB3631F99CF2D00D05889 /* LogUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
 		9E1F9B8A1F8B76D900331087 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				9EAC90F51F74A760004FA02E /* Utils.swift */,
 				9E2AFE6D1F750B7800981F73 /* NetUtils.swift */,
 				9E0FB3631F99CF2D00D05889 /* LogUtils.swift */,
+				9E0F5B861FB3F83F00CFAAE7 /* SandBoxUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -360,7 +363,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9EB7F5921FA075F200712DE8 /* PBXTargetDependency */,
+				9E0F5B891FB3FE7600CFAAE7 /* PBXTargetDependency */,
 			);
 			name = BaseTools;
 			productName = BaseTools;
@@ -480,6 +483,7 @@
 				9E86EF041F9F364800DCAD9D /* WebImageExtension.swift in Sources */,
 				9EDEC2CF1F90465F00B0F56A /* QRCodeReaderResult.swift in Sources */,
 				9EAC90FD1F74A7CB004FA02E /* AlertViewDrawKit.swift in Sources */,
+				9E0F5B871FB3F83F00CFAAE7 /* SandBoxUtils.swift in Sources */,
 				9EAC90EF1F74A6EE004FA02E /* DateExtension.swift in Sources */,
 				9EAC91001F74A801004FA02E /* QRCodeScanViewController.swift in Sources */,
 				9EAC90F31F74A6FA004FA02E /* TableEmptyable.swift in Sources */,
@@ -515,15 +519,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9E0F5B891FB3FE7600CFAAE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EB7F58C1FA0753F00712DE8 /* CommonCryptoModuleMap */;
+			targetProxy = 9E0F5B881FB3FE7600CFAAE7 /* PBXContainerItemProxy */;
+		};
 		9EAC91241F74B3F0004FA02E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9EAC90D01F749F02004FA02E /* BaseTools */;
 			targetProxy = 9EAC91231F74B3F0004FA02E /* PBXContainerItemProxy */;
-		};
-		9EB7F5921FA075F200712DE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9EB7F58C1FA0753F00712DE8 /* CommonCryptoModuleMap */;
-			targetProxy = 9EB7F5911FA075F200712DE8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
