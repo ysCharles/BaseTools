@@ -42,7 +42,7 @@ extension UIColor {
         var cString: String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         //string should be 6 or 8 characters
-        if cString.characters.count < 6 {
+        if cString.count < 6 {
             return UIColor.clear
         }
         
@@ -56,7 +56,7 @@ extension UIColor {
             cString = (cString as NSString).substring(from: 1)
         }
         
-        if cString.characters.count != 6 {
+        if cString.count != 6 {
             return UIColor.clear
         }
         
