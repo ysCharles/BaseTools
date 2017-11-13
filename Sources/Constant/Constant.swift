@@ -12,7 +12,8 @@ import UIKit
 public let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 public let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 public let SCREEN_SCALE = UIScreen.main.scale
-public let NAV_BAR_HEIGHT: CGFloat = 64
+public let NAV_BAR_HEIGHT: CGFloat = SCREEN_HEIGHT == 812 ? 88 : 64
+public let STATUS_BAR_HEIGHT: CGFloat = SCREEN_HEIGHT == 812 ? 44 : 20
 public let PAGEMENU_HEIGHT: CGFloat = 32
 
 
