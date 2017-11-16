@@ -27,6 +27,7 @@
 		9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AFE6D1F750B7800981F73 /* NetUtils.swift */; };
 		9E6852201FA1E285005E5879 /* TLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68521F1FA1E285005E5879 /* TLTextView.swift */; };
+		9E6D9BC01FBD570700A1215E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */; };
 		9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7731041F8DBE300044EF10 /* UIImageExtension.swift */; };
@@ -109,6 +110,7 @@
 		9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9E2AFE6D1F750B7800981F73 /* NetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtils.swift; sourceTree = "<group>"; };
 		9E68521F1FA1E285005E5879 /* TLTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTextView.swift; sourceTree = "<group>"; };
+		9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9E7731041F8DBE300044EF10 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9E77B3271FA2F8D800A905B0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				9EAC90E01F74A627004FA02E /* UIColorExtension.swift */,
 				9E7731041F8DBE300044EF10 /* UIImageExtension.swift */,
 				9E86EF031F9F364800DCAD9D /* WebImageExtension.swift */,
+				9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				9EAC90FC1F74A7C9004FA02E /* AlertView.swift in Sources */,
 				9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */,
 				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,
+				9E6D9BC01FBD570700A1215E /* UIViewExtension.swift in Sources */,
 				9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */,
 				9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */,
 				9E6852201FA1E285005E5879 /* TLTextView.swift in Sources */,
