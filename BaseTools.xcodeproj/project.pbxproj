@@ -28,6 +28,10 @@
 		9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AFE6D1F750B7800981F73 /* NetUtils.swift */; };
 		9E6852201FA1E285005E5879 /* TLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68521F1FA1E285005E5879 /* TLTextView.swift */; };
 		9E6D9BC01FBD570700A1215E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */; };
+		9E6D9BC21FBD685800A1215E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9BC11FBD685800A1215E /* UIViewControllerExtension.swift */; };
+		9E6D9BC41FBD6A9E00A1215E /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6D9BC31FBD6A9E00A1215E /* MBProgressHUD.framework */; };
+		9E6D9BC51FBD6A9E00A1215E /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6D9BC31FBD6A9E00A1215E /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E7188DF1FBD7F9100DFB8E2 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6D9BC31FBD6A9E00A1215E /* MBProgressHUD.framework */; };
 		9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; };
 		9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E7731051F8DBE300044EF10 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7731041F8DBE300044EF10 /* UIImageExtension.swift */; };
@@ -96,6 +100,7 @@
 				9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */,
 				9E86EF021F9F0FC000DCAD9D /* Kingfisher.framework in Embed Frameworks */,
 				9E7731031F8DA6060044EF10 /* Alamofire.framework in Embed Frameworks */,
+				9E6D9BC51FBD6A9E00A1215E /* MBProgressHUD.framework in Embed Frameworks */,
 				9E77B32A1FA2F8E300A905B0 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -111,6 +116,8 @@
 		9E2AFE6D1F750B7800981F73 /* NetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtils.swift; sourceTree = "<group>"; };
 		9E68521F1FA1E285005E5879 /* TLTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTextView.swift; sourceTree = "<group>"; };
 		9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9E6D9BC11FBD685800A1215E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		9E6D9BC31FBD6A9E00A1215E /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		9E7731041F8DBE300044EF10 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9E77B3271FA2F8D800A905B0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -153,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E7188DF1FBD7F9100DFB8E2 /* MBProgressHUD.framework in Frameworks */,
 				9E77B3281FA2F8D900A905B0 /* SnapKit.framework in Frameworks */,
 				9E86EF001F9F0F8A00DCAD9D /* Kingfisher.framework in Frameworks */,
 				9E2AFE6C1F750B1A00981F73 /* Alamofire.framework in Frameworks */,
@@ -166,6 +174,7 @@
 				9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */,
 				9E86EF011F9F0FC000DCAD9D /* Kingfisher.framework in Frameworks */,
 				9E7731021F8DA6060044EF10 /* Alamofire.framework in Frameworks */,
+				9E6D9BC41FBD6A9E00A1215E /* MBProgressHUD.framework in Frameworks */,
 				9E77B3291FA2F8E300A905B0 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +185,7 @@
 		9E2AFE6A1F750B1900981F73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E6D9BC31FBD6A9E00A1215E /* MBProgressHUD.framework */,
 				9E77B3271FA2F8D800A905B0 /* SnapKit.framework */,
 				9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */,
 				9E2AFE6B1F750B1A00981F73 /* Alamofire.framework */,
@@ -234,6 +244,7 @@
 				9E7731041F8DBE300044EF10 /* UIImageExtension.swift */,
 				9E86EF031F9F364800DCAD9D /* WebImageExtension.swift */,
 				9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */,
+				9E6D9BC11FBD685800A1215E /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -494,6 +505,7 @@
 				9EAC90F01F74A6F0004FA02E /* IntExtension.swift in Sources */,
 				9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */,
 				9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */,
+				9E6D9BC21FBD685800A1215E /* UIViewControllerExtension.swift in Sources */,
 				9EAC90FC1F74A7C9004FA02E /* AlertView.swift in Sources */,
 				9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */,
 				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,

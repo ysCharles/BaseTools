@@ -36,6 +36,14 @@ class ViewController: UIViewController {
         btn1.addTarget(self, action: #selector(pushTableView), for: .touchUpInside)
         view.addSubview(btn1)
         
+        let btn2 = UIButton(type: .custom)
+        btn2.setBackgroundWebImage(urlString: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-1.jpg", for: .normal)
+        btn2.frame = CGRect(x: 100, y: 430, width: 170, height: 30)
+        btn2.setTitle("show progresss", for: .normal)
+        btn2.setTitleColor(UIColor.blue, for: .normal)
+        btn2.addTarget(self, action: #selector(showMB), for: .touchUpInside)
+        view.addSubview(btn2)
+        
 //        testJson()
 //        testNetUtils()
 //        testDic2Model()
@@ -52,6 +60,11 @@ class ViewController: UIViewController {
         textView.textColor = UIColor.orange
         textView.placeholder = "这是一个测试内容"
         view.addSubview(textView)
+    }
+    
+    @objc private func showMB() {
+        showTextHud(in: nil, duration: 1.5, yOffset: 100)
+//        showNetLoadingHud(in: nil, msg: "Loading")
     }
     
     @objc private func tabPush() {

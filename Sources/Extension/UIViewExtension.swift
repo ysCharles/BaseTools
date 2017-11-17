@@ -59,7 +59,7 @@ public extension UIView {
     }
     
     /// size
-    public var size: CGFloat {
+    public var size: CGSize {
         get {
             return frame.size
         }
