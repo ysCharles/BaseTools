@@ -21,6 +21,13 @@ open class BaseNavigationController: UINavigationController {
         super.didReceiveMemoryWarning()
     }
     
+    open override var childViewControllerForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
+    
+    open override var childViewControllerForStatusBarHidden: UIViewController? {
+        return topViewController
+    }
     
 }
 // MARK: 解决修改 leftBarButtonItem后系统自带的侧滑返回功能消失的问题
