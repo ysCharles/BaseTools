@@ -11,6 +11,40 @@ import UIKit
 import StoreKit
 
 public struct Utils {
+    
+    /// 是否是新版本
+    ///
+    /// - Returns: true：是新版本 false:不是新版本
+    @discardableResult
+    public static func isNewVersion() -> Bool {
+        guard let info = Bundle.main.infoDictionary else {
+            return false
+        }
+        
+        // 获取 app 当前版本
+        guard let currentVersion = info["CFBundleShortVersionString"] as? String else {
+            return false
+        }
+        
+        let key = "app_version"
+        guard let oldVersion = UserDefaults.standard.string(forKey: key) else {
+            //保存当前版本
+            UserDefaults.standard.set(currentVersion, forKey: key)
+            UserDefaults.standard.synchronize()
+            return true // 没有获取到旧版本号  就是没有保存过版本号 肯定是 新安装
+        }
+        
+        if oldVersion == currentVersion { // 保存版本号与当前版本号一致  不是新版本
+            return false
+        } else { //保存版本号与当前版本号不一致  是新版本
+            //保存当前版本
+            UserDefaults.standard.set(currentVersion, forKey: key)
+            UserDefaults.standard.synchronize()
+            return true
+        }
+    }
+    
+    
     // MARK:- 从 storyboard 中唤醒 viewcontroller
     /// 从 storyboard 中唤醒 viewcontroller
     ///
