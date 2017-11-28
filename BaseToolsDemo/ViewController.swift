@@ -44,6 +44,14 @@ class ViewController: UIViewController {
         btn2.addTarget(self, action: #selector(showMB), for: .touchUpInside)
         view.addSubview(btn2)
         
+        let btn3 = UIButton(type: .custom)
+        btn3.setBackgroundWebImage(urlString: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-1.jpg", for: .normal)
+        btn3.frame = CGRect(x: 100, y: 470, width: 170, height: 30)
+        btn3.setTitle("展示图片浏览器", for: .normal)
+        btn3.setTitleColor(UIColor.blue, for: .normal)
+        btn3.addTarget(self, action: #selector(showPhotos), for: .touchUpInside)
+        view.addSubview(btn3)
+        
 //        testJson()
 //        testNetUtils()
 //        testDic2Model()
@@ -53,6 +61,12 @@ class ViewController: UIViewController {
         test1()
         test2()
         test3()
+    }
+    
+    @objc func showPhotos() {
+        let vc = Utils.getViewController(storyboardID: "ImageViewerDemoController", fromStoryboard: "Main")
+        navigationController?.show(vc, sender: self)
+        
     }
     
     private func testTextView() {

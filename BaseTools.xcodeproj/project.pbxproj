@@ -66,6 +66,13 @@
 		9EAC911C1F74B3D9004FA02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */; };
 		9EAC91211F74B3F0004FA02E /* BaseTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; };
 		9EAC91221F74B3F0004FA02E /* BaseTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAC90D11F749F02004FA02E /* BaseTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EC04DCC1FCCFC2300B260B1 /* ImageViewer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC04DCB1FCCFC2300B260B1 /* ImageViewer.xcassets */; };
+		9EC04DCE1FCCFC7F00B260B1 /* ImageViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC04DCD1FCCFC7F00B260B1 /* ImageViewBar.swift */; };
+		9EC04DD41FCD024D00B260B1 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC04DD31FCD024D00B260B1 /* ImageResource.swift */; };
+		9EC04DD61FCD02C000B260B1 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC04DD51FCD02C000B260B1 /* ImageGridView.swift */; };
+		9EC04DDC1FCD07D600B260B1 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC04DDB1FCD07D600B260B1 /* ImageViewer.swift */; };
+		9EC04DDE1FCD08A500B260B1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC04DDD1FCD08A500B260B1 /* ImageView.swift */; };
+		9EC04DE01FCD2D8800B260B1 /* ImageViewerDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC04DDF1FCD2D8800B260B1 /* ImageViewerDemoController.swift */; };
 		9EDEC2C91F8EFDD000B0F56A /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2C81F8EFDD000B0F56A /* TableController.swift */; };
 		9EDEC2CD1F8F690600B0F56A /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2CC1F8F690600B0F56A /* QRCodeReader.swift */; };
 		9EDEC2CF1F90465F00B0F56A /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEC2CE1F90465F00B0F56A /* QRCodeReaderResult.swift */; };
@@ -148,6 +155,13 @@
 		9EAC91181F74B3D9004FA02E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EAC911B1F74B3D9004FA02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EAC911D1F74B3D9004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EC04DCB1FCCFC2300B260B1 /* ImageViewer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageViewer.xcassets; sourceTree = "<group>"; };
+		9EC04DCD1FCCFC7F00B260B1 /* ImageViewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewBar.swift; sourceTree = "<group>"; };
+		9EC04DD31FCD024D00B260B1 /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
+		9EC04DD51FCD02C000B260B1 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		9EC04DDB1FCD07D600B260B1 /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		9EC04DDD1FCD08A500B260B1 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		9EC04DDF1FCD2D8800B260B1 /* ImageViewerDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerDemoController.swift; sourceTree = "<group>"; };
 		9EDEC2C81F8EFDD000B0F56A /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		9EDEC2CC1F8F690600B0F56A /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		9EDEC2CE1F90465F00B0F56A /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
@@ -323,6 +337,7 @@
 		9EAC91011F74A821004FA02E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EC04DCA1FCCFBAF00B260B1 /* ImageViewer */,
 				9EAC91021F74A834004FA02E /* ImageLoopView.swift */,
 				9EAC91031F74A834004FA02E /* ImageRollView.swift */,
 				9E68521F1FA1E285005E5879 /* TLTextView.swift */,
@@ -340,8 +355,22 @@
 				9EAC911A1F74B3D9004FA02E /* LaunchScreen.storyboard */,
 				9EAC911D1F74B3D9004FA02E /* Info.plist */,
 				9EDEC2C81F8EFDD000B0F56A /* TableController.swift */,
+				9EC04DDF1FCD2D8800B260B1 /* ImageViewerDemoController.swift */,
 			);
 			path = BaseToolsDemo;
+			sourceTree = "<group>";
+		};
+		9EC04DCA1FCCFBAF00B260B1 /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				9EC04DCB1FCCFC2300B260B1 /* ImageViewer.xcassets */,
+				9EC04DCD1FCCFC7F00B260B1 /* ImageViewBar.swift */,
+				9EC04DD31FCD024D00B260B1 /* ImageResource.swift */,
+				9EC04DD51FCD02C000B260B1 /* ImageGridView.swift */,
+				9EC04DDB1FCD07D600B260B1 /* ImageViewer.swift */,
+				9EC04DDD1FCD08A500B260B1 /* ImageView.swift */,
+			);
+			path = ImageViewer;
 			sourceTree = "<group>";
 		};
 		9EDEC2D01F907E9100B0F56A /* DefaultView */ = {
@@ -454,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAC91071F74A8B5004FA02E /* QRCode.xcassets in Resources */,
+				9EC04DCC1FCCFC2300B260B1 /* ImageViewer.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +522,8 @@
 			files = (
 				9EAC90EE1F74A6E8004FA02E /* BaseViewController.swift in Sources */,
 				9EDEC2D21F90803000B0F56A /* QRCodeReaderViewBuilder.swift in Sources */,
+				9EC04DCE1FCCFC7F00B260B1 /* ImageViewBar.swift in Sources */,
+				9EC04DDC1FCD07D600B260B1 /* ImageViewer.swift in Sources */,
 				9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */,
 				9EDEC2CD1F8F690600B0F56A /* QRCodeReader.swift in Sources */,
 				9E86EF041F9F364800DCAD9D /* WebImageExtension.swift in Sources */,
@@ -502,10 +534,13 @@
 				9EAC91001F74A801004FA02E /* QRCodeScanViewController.swift in Sources */,
 				9EAC90F31F74A6FA004FA02E /* TableEmptyable.swift in Sources */,
 				9EAC91051F74A83A004FA02E /* ImageRollView.swift in Sources */,
+				9EC04DD41FCD024D00B260B1 /* ImageResource.swift in Sources */,
 				9EAC90F01F74A6F0004FA02E /* IntExtension.swift in Sources */,
 				9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */,
 				9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */,
 				9E6D9BC21FBD685800A1215E /* UIViewControllerExtension.swift in Sources */,
+				9EC04DD61FCD02C000B260B1 /* ImageGridView.swift in Sources */,
+				9EC04DDE1FCD08A500B260B1 /* ImageView.swift in Sources */,
 				9EAC90FC1F74A7C9004FA02E /* AlertView.swift in Sources */,
 				9EAC90F11F74A6F3004FA02E /* StringExtension.swift in Sources */,
 				9EAC90F21F74A6F6004FA02E /* UIColorExtension.swift in Sources */,
@@ -526,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC04DE01FCD2D8800B260B1 /* ImageViewerDemoController.swift in Sources */,
 				9EDEC2C91F8EFDD000B0F56A /* TableController.swift in Sources */,
 				9EAC91141F74B3D9004FA02E /* ViewController.swift in Sources */,
 				9EAC91121F74B3D9004FA02E /* AppDelegate.swift in Sources */,

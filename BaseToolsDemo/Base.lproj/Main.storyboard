@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EYg-Fx-c5F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EYg-Fx-c5F">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,6 +56,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yub-jH-RUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="943" y="139"/>
+        </scene>
+        <!--Image Viewer Demo Controller-->
+        <scene sceneID="67A-j7-GmG">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewerDemoController" id="jJa-qf-lr7" customClass="ImageViewerDemoController" customModule="BaseToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jli-pV-sVK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p6-u5-fgu" customClass="ImageGridView" customModule="BaseTools">
+                                <rect key="frame" x="15" y="180" width="345" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Xdx-ZW-a5z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5p6-u5-fgu" firstAttribute="top" secondItem="hVJ-Uj-g0e" secondAttribute="top" constant="160" id="YXO-Va-F5G"/>
+                            <constraint firstItem="hVJ-Uj-g0e" firstAttribute="trailing" secondItem="5p6-u5-fgu" secondAttribute="trailing" constant="15" id="lss-y3-fLm"/>
+                            <constraint firstItem="5p6-u5-fgu" firstAttribute="leading" secondItem="hVJ-Uj-g0e" secondAttribute="leading" constant="15" id="zqw-g5-uFq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hVJ-Uj-g0e"/>
+                    </view>
+                    <connections>
+                        <outlet property="heightConstraint" destination="Xdx-ZW-a5z" id="r4I-jc-CIM"/>
+                        <outlet property="imageGridView" destination="5p6-u5-fgu" id="MvX-px-LjY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqU-di-gFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="807"/>
         </scene>
     </scenes>
 </document>

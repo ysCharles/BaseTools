@@ -16,12 +16,15 @@ extension UIImageView {
     /// - Parameters:
     ///   - urlString: 网络图片地址
     ///   - placeHolder: 占位图
-    public func setWebImage(urlString: String, placeHolder: UIImage? = nil) {
+    public func setWebImage(urlString: String, placeHolder: UIImage? = nil, completionHandler: (()->Void)? = nil) {
         self.kf.indicatorType = .activity
         self.kf.setImage(with: URL(string: urlString) , placeholder: placeHolder, options: [.transition(.fade(1))], progressBlock: { (completed, total) in
             proLog("进度：\(completed)/\(total)")
         }) { (image, error, type, url) in
             proLog("\(urlString) --> finished")
+            if let c = completionHandler {
+                c()
+            }
         }
     }
 }
@@ -34,11 +37,14 @@ extension UIButton {
     ///   - urlString: 网络图片地址
     ///   - state: UIControlState
     ///   - placeHolder: 占位图
-    public func setWebImage(urlString: String, for state: UIControlState, placeHolder: UIImage? = nil) {
+    public func setWebImage(urlString: String, for state: UIControlState, placeHolder: UIImage? = nil, completionHandler: (()->Void)? = nil) {
         self.kf.setImage(with: URL(string: urlString), for: state, placeholder: placeHolder, options: [.transition(.fade(1))], progressBlock: { (completed, total) in
             proLog("进度：\(completed)/\(total)")
         }) { (image, error, type, url) in
             proLog("\(urlString) --> finished")
+            if let c = completionHandler {
+                c()
+            }
         }
     }
     
@@ -48,11 +54,14 @@ extension UIButton {
     ///   - urlString: 网络图片地址
     ///   - state: UIControlState
     ///   - placeHolder: 占位图
-    public func setBackgroundWebImage(urlString: String, for state: UIControlState, placeHolder: UIImage? = nil) {
+    public func setBackgroundWebImage(urlString: String, for state: UIControlState, placeHolder: UIImage? = nil, completionHandler: (()->Void)? = nil) {
         self.kf.setBackgroundImage(with: URL(string: urlString), for: state, placeholder: placeHolder, options: [.transition(.fade(1))], progressBlock: { (completed, total) in
             proLog("进度：\(completed)/\(total)")
         }) { (image, error, type, url) in
             proLog("\(urlString) --> finished")
+            if let c = completionHandler {
+                c()
+            }
         }
     }
 }
