@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import WebKit
 
-public typealias SuccessClosure = ([String: Any]) -> Void
+public typealias SuccessClosure = (String) -> Void
 public typealias FailureClosure = (String) -> Void
 
 /// 网络请求工具
@@ -39,19 +39,29 @@ public class NetUtils: NSObject {
         //新的请求 加入字典
         requestTasks[key] = request
         
-        request.responseJSON {[unowned self] (response) in
+        request.responseString {[unowned self] (response) in
             self.requestTasks.removeValue(forKey: key)
             switch response.result {
             case .success(let value):
-                guard let v = value as? [String: Any] else {
-                    failure("返回的数据格式不正确，请确认")
-                    return
-                }
-                success(v)
+                success(value)
             case .failure(let error):
                 failure(error.localizedDescription)
             }
         }
+        
+//        request.responseJSON {[unowned self] (response) in
+//            self.requestTasks.removeValue(forKey: key)
+//            switch response.result {
+//            case .success(let value):
+//                guard let v = value as? [String: Any] else {
+//                    failure("返回的数据格式不正确，请确认")
+//                    return
+//                }
+//                success(v)
+//            case .failure(let error):
+//                failure(error.localizedDescription)
+//            }
+//        }
         
         return key
     }
@@ -93,18 +103,26 @@ public class NetUtils: NSObject {
                 uploadRequest.uploadProgress(closure: { (progress) in
                     //这里处理进度问题
                     progressClosure(progress.fractionCompleted)
-                }).responseJSON(completionHandler: { (response) in
+                }).responseString(completionHandler: { (response) in
                     switch response.result {
                     case .success(let value):
-                        guard let v = value as? [String: Any] else {
-                            failure("返回的数据格式不正确，请确认")
-                            return
-                        }
-                        success(v)
+                        success(value)
                     case .failure(let error):
                         failure(error.localizedDescription)
                     }
                 })
+//                    .responseJSON(completionHandler: { (response) in
+//                    switch response.result {
+//                    case .success(let value):
+//                        guard let v = value as? [String: Any] else {
+//                            failure("返回的数据格式不正确，请确认")
+//                            return
+//                        }
+//                        success(v)
+//                    case .failure(let error):
+//                        failure(error.localizedDescription)
+//                    }
+//                })
             case .failure(let error):
                 failure(error.localizedDescription)
             }

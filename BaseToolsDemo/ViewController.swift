@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         view.addSubview(btn3)
         
 //        testJson()
-//        testNetUtils()
+        testNetUtils()
 //        testDic2Model()
 //        testMD5()
         testTextView()
