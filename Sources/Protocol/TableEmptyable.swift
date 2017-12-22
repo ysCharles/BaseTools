@@ -8,25 +8,50 @@
 
 import UIKit
 
-public protocol TableEmptyable {
-    /// 列表是否为空
-    var isEmptyData: Bool { get }
+public protocol TableEmptyViewDelegate : class {
     /// 提供占位view,该view将占据tableView的tableFooterView
-    var placeHolderView: UIView { get }
-    /// 建议在reloadData前,调用该方法
-    func setPlaceholderIfNeed()
+    var placeHolderView: UIView {get}
 }
 
 // MARK: - 扩展默认实现
-extension TableEmptyable where Self: BaseTableViewController {
-    public var isEmptyData: Bool {
-        let sectionCount: Int = tableView.numberOfSections
+extension TableEmptyViewDelegate where Self: BaseTableViewController {
+
+    public var placeHolderView: UIView {
+        get {
+            let imgView = UIImageView(frame: CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-64))
+
+            imgView.image = UIImage(named: "00xx")
+
+            imgView.backgroundColor = UIColor.blue
+            return imgView
+        }
+    }
+}
+
+extension UITableView {
+    
+    public weak var emptyViewDelegate : TableEmptyViewDelegate? {
+        set {
+            objc_setAssociatedObject(self, UITableView.RunTimeKey.EmptyViewDelegateKey!, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+        }
+        get {
+            return objc_getAssociatedObject(self, UITableView.RunTimeKey.EmptyViewDelegateKey!) as? TableEmptyViewDelegate
+        }
+    }
+    
+    struct RunTimeKey {
+        static let EmptyViewDelegateKey = UnsafeRawPointer.init(bitPattern: "EmptyViewDelegateKey".hashValue)
+    }
+    
+    /// 列表是否为空
+    private var isEmptyData: Bool {
+        let sectionCount : Int = numberOfSections
         if sectionCount == 0 {
             return true
         }
         
         for section in 0 ..< sectionCount {
-            if tableView.numberOfRows(inSection: section) != 0 {
+            if numberOfRows(inSection: section) != 0 {
                 return false
             }
         }
@@ -34,22 +59,20 @@ extension TableEmptyable where Self: BaseTableViewController {
         return true
     }
     
-    public var placeHolderView: UIView {
-        get {
-            let imgView = UIImageView(frame: CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-64))
-            
-            imgView.image = UIImage(named: "00xx")
-            
-            imgView.backgroundColor = UIColor.blue
-            return imgView
-        }
+    public  func tlReloadData() {
+        tlCheckEmpty()
+        reloadData()
     }
     
-    public func setPlaceholderIfNeed() {
-        if self.isEmptyData {
-            self.tableView.tableFooterView = placeHolderView
+    private func tlCheckEmpty() {
+        if isEmptyData {
+            if let del = emptyViewDelegate {
+                tableFooterView = del.placeHolderView
+            } else {
+                tableFooterView = UIView()
+            }
         } else {
-            self.tableView.tableFooterView = UIView()
+            tableFooterView = UIView()
         }
     }
 }

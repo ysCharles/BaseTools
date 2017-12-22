@@ -52,6 +52,13 @@ class ViewController: UIViewController {
         btn3.addTarget(self, action: #selector(showPhotos), for: .touchUpInside)
         view.addSubview(btn3)
         
+        let btn4 = UIButton(type: .custom)
+        btn4.frame = CGRect(x: 100, y: 510, width: 170, height: 30)
+        btn4.setTitle("展示图片浏览器", for: .normal)
+        btn4.setTitleColor(UIColor.blue, for: .normal)
+        btn4.addTarget(self, action: #selector(showEmptyTable), for: .touchUpInside)
+        view.addSubview(btn4)
+        
 //        testJson()
         testNetUtils()
 //        testDic2Model()
@@ -96,6 +103,11 @@ class ViewController: UIViewController {
     @objc private func pushTableView() {
         let vc = Utils.getViewController(storyboardID: "TableController", fromStoryboard: "Main")
         
+        navigationController?.show(vc, sender: nil)
+    }
+    
+    @objc private func showEmptyTable() {
+        let vc = Utils.getViewController(storyboardID: "TableEmptyDemoController", fromStoryboard: "Main")
         navigationController?.show(vc, sender: nil)
     }
     

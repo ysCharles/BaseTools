@@ -42,6 +42,7 @@
 		9E86EF011F9F0FC000DCAD9D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */; };
 		9E86EF021F9F0FC000DCAD9D /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E86EF041F9F364800DCAD9D /* WebImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E86EF031F9F364800DCAD9D /* WebImageExtension.swift */; };
+		9EA9A1371FE9FBDA00F95D08 /* TableEmptyDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9A1361FE9FBDA00F95D08 /* TableEmptyDemoController.swift */; };
 		9EAC90DE1F74A5BF004FA02E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90DD1F74A5BF004FA02E /* Constant.swift */; };
 		9EAC90EB1F74A6E0004FA02E /* BaseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E51F74A684004FA02E /* BaseBarButtonItem.swift */; };
 		9EAC90EC1F74A6E2004FA02E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC90E61F74A684004FA02E /* BaseNavigationController.swift */; };
@@ -129,6 +130,7 @@
 		9E77B3271FA2F8D800A905B0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9E86EEFF1F9F0F8A00DCAD9D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9E86EF031F9F364800DCAD9D /* WebImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageExtension.swift; sourceTree = "<group>"; };
+		9EA9A1361FE9FBDA00F95D08 /* TableEmptyDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEmptyDemoController.swift; sourceTree = "<group>"; };
 		9EAC90D11F749F02004FA02E /* BaseTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAC90D51F749F02004FA02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EAC90DD1F74A5BF004FA02E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				9EAC911D1F74B3D9004FA02E /* Info.plist */,
 				9EDEC2C81F8EFDD000B0F56A /* TableController.swift */,
 				9EC04DDF1FCD2D8800B260B1 /* ImageViewerDemoController.swift */,
+				9EA9A1361FE9FBDA00F95D08 /* TableEmptyDemoController.swift */,
 			);
 			path = BaseToolsDemo;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC04DE01FCD2D8800B260B1 /* ImageViewerDemoController.swift in Sources */,
+				9EA9A1371FE9FBDA00F95D08 /* TableEmptyDemoController.swift in Sources */,
 				9EDEC2C91F8EFDD000B0F56A /* TableController.swift in Sources */,
 				9EAC91141F74B3D9004FA02E /* ViewController.swift in Sources */,
 				9EAC91121F74B3D9004FA02E /* AppDelegate.swift in Sources */,
