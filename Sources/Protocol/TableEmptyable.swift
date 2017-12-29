@@ -60,8 +60,8 @@ extension UITableView {
     }
     
     public  func tlReloadData() {
-        tlCheckEmpty()
         reloadData()
+        tlCheckEmpty()
     }
     
     private func tlCheckEmpty() {
