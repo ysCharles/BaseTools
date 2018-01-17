@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let tabBarHeight : CGFloat = UIScreen.main.bounds.height == 812 ?  40.0 + 39 : 40
+
 class ImageView: UIScrollView {
     var imageView: UIImageView!
     var activityIndicator: UIActivityIndicatorView!
@@ -31,7 +33,7 @@ class ImageView: UIScrollView {
         self.delegate = self
         self.tag = atIndex
         
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (frame.width - ImageViewBarHeight)/2, y: (frame.height - ImageViewBarHeight)/2, width: ImageViewBarHeight, height: ImageViewBarHeight))
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (frame.width - tabBarHeight)/2, y: (frame.height - tabBarHeight)/2, width: tabBarHeight, height: tabBarHeight))
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)

@@ -8,6 +8,7 @@
 
 import UIKit
 import BaseTools
+import Kingfisher
 
 class ViewController: UIViewController {
 
@@ -16,8 +17,9 @@ class ViewController: UIViewController {
         navigationItem.title = "首页"
         
         let imgView = UIImageView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        let img = UIImage(named:"WechatIMG160.jpeg")
-        imgView.setWebImage(urlString: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-1.jpg", placeHolder: img)
+        
+//        let img = UIImage(named:"WechatIMG160.jpeg")
+//        imgView.setWebImage(urlString: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-1.jpg", placeHolder: img)
 //        imgView.image = Utils.createQRCode(qrString: "Hello BaseProject Framework", qrImageName: "test")
         view.addSubview(imgView)
         

@@ -28,7 +28,10 @@ class ImageViewerDemoController: UIViewController {
         heightConstraint.constant = ImageGridView.getHeightWithWidth(imageGridView.width, imgCount: data.count)
         
         imageGridView.show(imageArray: data) { (buttonsArray, buttonIndex) in
-            ImageViewer.show(images: data, at: buttonIndex, from: buttonsArray)
+            var config = ImageViewerConfig()
+            config.backgroudAlpha = 0.6
+            config.isHiddenTabbar = true
+            ImageViewer.show(images: data, at: buttonIndex, from: buttonsArray,config: config)
         }
     }
 
