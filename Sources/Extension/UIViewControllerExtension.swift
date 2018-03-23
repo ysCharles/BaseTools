@@ -71,14 +71,14 @@ public class HUDManager {
         }
     }
     
-    public static func showGifImage(name: String, msg: String, duration: Double? = nil, superView: UIView? = nil) {
+    public static func showGifImage(name: String, msg: String, duration: Double? = nil, superView: UIView? = nil, bundle: Bundle? = nil) {
         setupHUD(superView: superView)
         
         let hud = HUDManager.shared.hud
         hud?.mode = .customView
         
         let imageView = UIImageView()
-        imageView.loadGif(name: name, bundle: nil)
+        imageView.loadGif(name: name, bundle: bundle)
         hud?.customView = imageView
         hud?.label.text = msg
         hud?.show(animated: true)
@@ -93,10 +93,6 @@ extension UIViewController {
     
     public func showTextHud(msg: String = "加载中", duration: Double? = nil) {
         HUDManager.showText(msg: msg, duration: duration, superView: self.view)
-    }
-    
-    public func showNetLoadingHud(in sView: UIView? = nil, msg: String = "加载中...") {
-        
     }
     
     /// 移除
