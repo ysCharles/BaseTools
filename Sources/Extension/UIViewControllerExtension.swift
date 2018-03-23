@@ -9,37 +9,29 @@
 import UIKit
 import MBProgressHUD
 
-extension UIViewController {
+public class HUDManager {
+    public static let shared = HUDManager()
     
-    public func showTextHud(in sView: UIView? = nil, msg: String = "加载中", duration: Double? = nil, yOffset: CGFloat? = 0) {
-        setupHUD(superView: sView ?? (self.view)!)
-        hud?.mode = .text
-        hud?.label.text = msg
-        hud?.show(animated: true)
-        if let duration = duration {
-            hud?.hide(animated: true, afterDelay: duration)
-        }
-    }
+    var hud : MBProgressHUD?
     
-    public func showNetLoadingHud(in sView: UIView? = nil, msg: String = "加载中...") {
-        setupHUD(superView: sView ?? (self.view)!)
-        hud?.label.text = msg
-        hud?.show(animated: true)
-    }
-    
-    /// 移除
-    public func hideHud() {
-        if let hud = hud {
-            hud.hide(animated: true)
-        }
-    }
-    
-    private func setupHUD(superView: UIView, yOffset: CGFloat? = 0) {
-        hideHud()
+    private init() {
         
-        let HUD = MBProgressHUD(view: superView)
-//        HUD.mode = .text
-//        HUD.label.text = msg
+    }
+    
+    /// 设置弹窗
+    ///
+    /// - Parameters:
+    ///   - superView: 弹窗的承载控件
+    ///   - yOffset: 默认为中心，正数为向下便偏移  负数为向上偏移
+    static func setupHUD(superView: UIView?, yOffset: CGFloat? = 0) {
+        hideHUD()
+        
+        guard let sView = superView ?? UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        let HUD = MBProgressHUD(view: sView)
+        
         HUD.label.font = UIFont.systemFont(ofSize:15)
         //设为false后点击屏幕其他地方有反应
         HUD.isUserInteractionEnabled = false
@@ -55,24 +47,60 @@ extension UIViewController {
         
         //偏移量，以 center 为起点
         HUD.offset.y = yOffset ?? 0
-        superView.addSubview(HUD)
-        hud = HUD
+        sView.addSubview(HUD)
+        HUDManager.shared.hud = HUD
+        
     }
     
-    // MARK: - 给 UIViewController 添加hud属性
-    /// hud 属性
-    var hud: MBProgressHUD? {
-        set {
-            objc_setAssociatedObject(self, UIViewController.RunTimeKey.HudKey!, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            return objc_getAssociatedObject(self, UIViewController.RunTimeKey.HudKey!) as? MBProgressHUD
+    public static func hideHUD() {
+        if let hud = HUDManager.shared.hud {
+            hud.hide(animated: true)
         }
     }
     
+    //
+    public static func showText(msg: String = "加载中", duration: Double? = nil, superView: UIView? = nil) {
+        setupHUD(superView: superView)
+        
+        let hud = HUDManager.shared.hud
+        hud?.mode = .text
+        hud?.label.text = msg
+        hud?.show(animated: true)
+        if let duration = duration {
+            hud?.hide(animated: true, afterDelay: duration)
+        }
+    }
     
-    /// 运行时 key
-    struct RunTimeKey {
-        static let HudKey = UnsafeRawPointer.init(bitPattern: "HudKey".hashValue)
+    public static func showGifImage(name: String, msg: String, duration: Double? = nil, superView: UIView? = nil) {
+        setupHUD(superView: superView)
+        
+        let hud = HUDManager.shared.hud
+        hud?.mode = .customView
+        
+        let imageView = UIImageView()
+        imageView.loadGif(name: name, bundle: nil)
+        hud?.customView = imageView
+        hud?.label.text = msg
+        hud?.show(animated: true)
+        if let duration = duration {
+            hud?.hide(animated: true, afterDelay: duration)
+        }
+    }
+    
+}
+
+extension UIViewController {
+    
+    public func showTextHud(msg: String = "加载中", duration: Double? = nil) {
+        HUDManager.showText(msg: msg, duration: duration, superView: self.view)
+    }
+    
+    public func showNetLoadingHud(in sView: UIView? = nil, msg: String = "加载中...") {
+        
+    }
+    
+    /// 移除
+    public func hideHud() {
+        HUDManager.hideHUD()
     }
 }

@@ -86,8 +86,8 @@ class ViewController: UIViewController {
     }
     
     @objc private func showMB() {
-        showTextHud(in: nil, duration: 1.5, yOffset: 100)
-//        showNetLoadingHud(in: nil, msg: "Loading")
+        showTextHud(msg: "文字信息", duration: 2)
+//        HUDManager.showGifImage(name: "loading.gif", msg: "正在加载...", duration: 2)
     }
     
     @objc private func tabPush() {

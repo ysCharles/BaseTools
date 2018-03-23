@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9E055CE02064976700A9C90C /* UIImageViewGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E055CDF2064976700A9C90C /* UIImageViewGif.swift */; };
+		9E055CEE2064B86800A9C90C /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E055CED2064B86800A9C90C /* loading.gif */; };
 		9E0F5B871FB3F83F00CFAAE7 /* SandBoxUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F5B861FB3F83F00CFAAE7 /* SandBoxUtils.swift */; };
 		9E0FB3641F99CF2D00D05889 /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0FB3631F99CF2D00D05889 /* LogUtils.swift */; };
 		9E1F9B8B1F8B76D900331087 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F9B8A1F8B76D900331087 /* Serializable.swift */; };
@@ -118,6 +120,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E055CDF2064976700A9C90C /* UIImageViewGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewGif.swift; sourceTree = "<group>"; };
+		9E055CED2064B86800A9C90C /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		9E0F5B861FB3F83F00CFAAE7 /* SandBoxUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxUtils.swift; sourceTree = "<group>"; };
 		9E0FB3631F99CF2D00D05889 /* LogUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
 		9E1F9B8A1F8B76D900331087 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				9E86EF031F9F364800DCAD9D /* WebImageExtension.swift */,
 				9E6D9BBF1FBD570700A1215E /* UIViewExtension.swift */,
 				9E6D9BC11FBD685800A1215E /* UIViewControllerExtension.swift */,
+				9E055CDF2064976700A9C90C /* UIImageViewGif.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 		9EAC91101F74B3D9004FA02E /* BaseToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9E055CED2064B86800A9C90C /* loading.gif */,
 				9E634713200DA49F0050818C /* loding.gif */,
 				9EAC91111F74B3D9004FA02E /* AppDelegate.swift */,
 				9EAC91131F74B3D9004FA02E /* ViewController.swift */,
@@ -499,6 +505,7 @@
 			files = (
 				9EAC911C1F74B3D9004FA02E /* LaunchScreen.storyboard in Resources */,
 				9EAC91191F74B3D9004FA02E /* Assets.xcassets in Resources */,
+				9E055CEE2064B86800A9C90C /* loading.gif in Resources */,
 				9EAC91171F74B3D9004FA02E /* Main.storyboard in Resources */,
 				9E634714200DA49F0050818C /* loding.gif in Resources */,
 			);
@@ -529,6 +536,7 @@
 			files = (
 				9EAC90EE1F74A6E8004FA02E /* BaseViewController.swift in Sources */,
 				9EDEC2D21F90803000B0F56A /* QRCodeReaderViewBuilder.swift in Sources */,
+				9E055CE02064976700A9C90C /* UIImageViewGif.swift in Sources */,
 				9EC04DCE1FCCFC7F00B260B1 /* ImageViewBar.swift in Sources */,
 				9EC04DDC1FCD07D600B260B1 /* ImageViewer.swift in Sources */,
 				9E2AFE6E1F750B7800981F73 /* NetUtils.swift in Sources */,
