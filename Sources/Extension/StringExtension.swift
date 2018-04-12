@@ -39,7 +39,8 @@ extension String {
         
         CC_MD5_Update(context, self, CC_LONG(self.lengthOfBytes(using: .utf8)))
         CC_MD5_Final(&digest, context)
-        context.deallocate(capacity: 1)
+        context.deallocate()
+//        context.deallocate(capacity: 1)
         return digest.map({ (byte) -> String in
             return String(format: "%02x", byte)
         }).joined()

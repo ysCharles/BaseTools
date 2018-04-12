@@ -147,15 +147,15 @@ class ViewController: UIViewController {
         NetUtils.getRequest(urlString: "https://httpbin.org/get", params: nil, success: { (response) in
             
             print(response)
-        }) { (msg) in
+        }, failure: { (msg) in
             print(msg)
-        }
+        }, parameterType: .json)
         
         NetUtils.postRequest(urlString: "https://httpbin.org/post", params: nil, success: { (dic) in
             print(dic)
-        }) { (msg) in
+        }, failure: { (msg) in
             print(msg)
-        }
+        },parameterType: .form)
     }
 }
 

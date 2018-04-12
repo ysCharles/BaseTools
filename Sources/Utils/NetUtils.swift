@@ -13,6 +13,16 @@ import WebKit
 public typealias SuccessClosure = (String) -> Void
 public typealias FailureClosure = (String) -> Void
 
+
+/// 网络请求参数格式 目前支持两种 form表单格式  json格式
+///
+/// - form: form表单格式
+/// - json: json格式
+public enum NetparameterType {
+    case form
+    case json
+}
+
 /// 网络请求工具
 public class NetUtils: NSObject {
     
@@ -29,13 +39,17 @@ public class NetUtils: NSObject {
                          method: HTTPMethod,
                          params: [String: Any]?,
                          success: @escaping SuccessClosure,
-                         failure:@escaping FailureClosure) -> String {
+                         failure:@escaping FailureClosure,
+                         parameterType: NetparameterType = .form) -> String {
         // 获取key 并查看 requestTasks 中是否已存在请求任务，如果已存在 取消
         let key = requestTaksKey(url: urlString, params: params)
         if let task = requestTasks[key] {
             task.cancel()
         }
-        let request = manager.request(urlString, method: method, parameters: params, encoding: URLEncoding.default, headers: nil)
+        
+        let encoding : ParameterEncoding = parameterType == .form ? URLEncoding.default : JSONEncoding.default
+        
+        let request = manager.request(urlString, method: method, parameters: params, encoding: encoding, headers: nil)
         //新的请求 加入字典
         requestTasks[key] = request
         
@@ -172,8 +186,9 @@ extension NetUtils {
     public static func getRequest(urlString: String,
                                   params: [String: Any]?,
                                   success: @escaping SuccessClosure,
-                                  failure:@escaping FailureClosure) -> String {
-        return shared.request(urlString: urlString, method: .get, params: params, success: success, failure: failure)
+                                  failure:@escaping FailureClosure,
+                                  parameterType: NetparameterType = .form) -> String {
+        return shared.request(urlString: urlString, method: .get, params: params, success: success, failure: failure, parameterType: parameterType)
     }
     
     /// post 网络请求
@@ -188,8 +203,9 @@ extension NetUtils {
     public  static func postRequest(urlString: String,
                                     params: [String: Any]?,
                                     success: @escaping SuccessClosure,
-                                    failure:@escaping FailureClosure) -> String {
-        return shared.request(urlString: urlString, method: .post, params: params, success: success, failure: failure)
+                                    failure:@escaping FailureClosure,
+                                    parameterType: NetparameterType = .form) -> String {
+        return shared.request(urlString: urlString, method: .post, params: params, success: success, failure: failure, parameterType: parameterType)
     }
     
     /// 上传图片
