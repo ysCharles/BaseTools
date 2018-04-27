@@ -86,7 +86,9 @@ class ViewController: UIViewController {
     }
     
     @objc private func showMB() {
-        showTextHud(msg: "文字信息", duration: 2)
+        let images = [UIImage(named: "d_1"),UIImage(named: "d_2"),UIImage(named: "d_3"),UIImage(named: "d_4")]
+        HUDManager.showAnimation(images as! [UIImage], msg: nil, duration: nil, superView: self.view)
+//        showTextHud(msg: "文字信息", duration: 2)
 //        HUDManager.showGifImage(name: "loading.gif", msg: "正在加载...", duration: 2)
     }
     

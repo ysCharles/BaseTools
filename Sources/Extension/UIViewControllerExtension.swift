@@ -87,6 +87,26 @@ public class HUDManager {
         }
     }
     
+    public static func showAnimation(_ images: [UIImage], msg : String?, duration : Double? = nil, superView: UIView? = nil) {
+        setupHUD(superView: superView)
+        
+        let hud = HUDManager.shared.hud
+        hud?.mode = .customView
+        
+        let imageView = UIImageView()
+        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        imageView.animationImages = images
+        imageView.image = images[0]
+        imageView.animationDuration = 1.2
+        hud?.customView = imageView
+        hud?.label.text = msg
+        hud?.show(animated: true)
+        imageView.startAnimating()
+        if let duration = duration {
+            hud?.hide(animated: true, afterDelay: duration)
+        }
+    }
+    
 }
 
 extension UIViewController {
