@@ -71,12 +71,12 @@ extension ImageGridView {
                 let imageButton  = UIButton()
                 imageButton.frame = CGRect(x: ImageGridViewImageMargin, y: ImageGridViewImageMargin, width: frame.size.width - 2 * ImageGridViewImageMargin, height: frame.size.height - 2 * ImageGridViewImageMargin)
                 imageButton.backgroundColor = KCOLOR_BACKGROUND_WHITE
-                imageButton.imageView?.contentMode = UIViewContentMode.scaleAspectFill
-                imageButton.kf.setImage(with: URL(string: imageArray[0])!, for: UIControlState.normal)
+                imageButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+                imageButton.kf.setImage(with: URL(string: imageArray[0])!, for: UIControl.State.normal)
                 
                 imageButton.tag = 0
                 imageButton.clipsToBounds = true
-                imageButton.addTarget(self, action: #selector(ImageGridView.onClickImage(_:)), for: UIControlEvents.touchUpInside)
+                imageButton.addTarget(self, action: #selector(ImageGridView.onClickImage(_:)), for: UIControl.Event.touchUpInside)
                 self.addSubview(imageButton)
                 
                 self.buttonArray.append(imageButton)
@@ -89,12 +89,12 @@ extension ImageGridView {
                     let imageButton  = UIButton()
                     imageButton.frame = CGRect(x: x, y: y, width: imgHeight, height: imgHeight)
                     imageButton.backgroundColor = KCOLOR_BACKGROUND_WHITE
-                    imageButton.imageView?.contentMode = UIViewContentMode.scaleAspectFill
-                    imageButton.kf.setImage(with: URL(string: imageArray[i])!, for: UIControlState.normal)
+                    imageButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+                    imageButton.kf.setImage(with: URL(string: imageArray[i])!, for: UIControl.State.normal)
                     
                     imageButton.tag = i
                     imageButton.clipsToBounds = true
-                    imageButton.addTarget(self, action: #selector(ImageGridView.onClickImage(_:)), for: UIControlEvents.touchUpInside)
+                    imageButton.addTarget(self, action: #selector(ImageGridView.onClickImage(_:)), for: UIControl.Event.touchUpInside)
                     self.addSubview(imageButton)
                     
                     self.buttonArray.append(imageButton)

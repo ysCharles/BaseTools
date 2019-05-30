@@ -24,8 +24,8 @@ class ImageViewBar: UIView {
     fileprivate lazy var closeButton : UIButton = {
         let button = UIButton(frame: CGRect(x: ImageViewBarDefaultMargin, y: (self.frame.height-ImageViewBarButtonWidth)/2, width: ImageViewBarButtonWidth, height: ImageViewBarButtonWidth))
         button.backgroundColor = UIColor.clear
-        button.contentMode = UIViewContentMode.scaleAspectFill
-        button.addTarget(self, action: #selector(ImageViewBar.onCloseButtonTapped), for: UIControlEvents.touchUpInside)
+        button.contentMode = UIView.ContentMode.scaleAspectFill
+        button.addTarget(self, action: #selector(ImageViewBar.onCloseButtonTapped), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -33,8 +33,8 @@ class ImageViewBar: UIView {
     fileprivate lazy var saveButton : UIButton = {
         let button = UIButton(frame: CGRect(x: self.frame.width-ImageViewBarButtonWidth-ImageViewBarDefaultMargin, y: (self.frame.height-ImageViewBarButtonWidth)/2, width: ImageViewBarButtonWidth, height: ImageViewBarButtonWidth))
         button.backgroundColor = UIColor.clear
-        button.contentMode = UIViewContentMode.scaleAspectFill
-        button.addTarget(self, action: #selector(ImageViewBar.onSaveButtonTapped), for: UIControlEvents.touchUpInside)
+        button.contentMode = UIView.ContentMode.scaleAspectFill
+        button.addTarget(self, action: #selector(ImageViewBar.onSaveButtonTapped), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -57,10 +57,10 @@ class ImageViewBar: UIView {
         saveButtonTapClosure = saveTapClosure
         closeButtonTapClosure = closeTapClosure
         
-        closeButton.setImage(UIImage(named: "close", in: Bundle(for: self.classForCoder), compatibleWith: nil), for: UIControlState())
+        closeButton.setImage(UIImage(named: "close", in: Bundle(for: self.classForCoder), compatibleWith: nil), for: UIControl.State())
         self.addSubview(closeButton)
         
-        saveButton.setImage(UIImage(named: "save", in: Bundle(for: self.classForCoder), compatibleWith: nil), for: UIControlState())
+        saveButton.setImage(UIImage(named: "save", in: Bundle(for: self.classForCoder), compatibleWith: nil), for: UIControl.State())
         self.addSubview(saveButton)
         
         self.addSubview(countLabel)

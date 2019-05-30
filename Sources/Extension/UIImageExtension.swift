@@ -18,14 +18,15 @@ extension UIImageScale {
     /// - Returns: 压缩后的 Data 可用于上传
     public func zip2Data(maxSize: CGFloat = 100 * 1024) -> Data? {
         var compression = CGFloat(0.85) //压缩比
-        guard let tempData = UIImageJPEGRepresentation(self, compression) else { return nil }
+        
+        guard let tempData = self.jpegData(compressionQuality: compression) else { return nil }
         
         var compressedData = tempData
         
         var lastSize = 0 //记录上一次的大小，如果
         while CGFloat(compressedData.count) > maxSize {
             compression = compression * 0.85
-            guard let tmpData = UIImageJPEGRepresentation(self, compression) else { return nil }
+            guard let tmpData = self.jpegData(compressionQuality: compression) else { return nil }
             // 判断和上次压缩后的大小比  如果一样 说明图片不能再压缩 就此返回
             if lastSize == tmpData.count {
                 return tmpData

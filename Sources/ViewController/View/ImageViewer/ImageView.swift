@@ -26,22 +26,22 @@ class ImageView: UIScrollView {
         self.backgroundColor = UIColor.clear
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
-        self.decelerationRate = UIScrollViewDecelerationRateFast
-        self.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.decelerationRate = UIScrollView.DecelerationRate.fast
+        self.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         self.minimumZoomScale = 1.0
         self.maximumZoomScale = 3.0
         self.delegate = self
         self.tag = atIndex
         
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: (frame.width - tabBarHeight)/2, y: (frame.height - tabBarHeight)/2, width: tabBarHeight, height: tabBarHeight))
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        activityIndicator.style = UIActivityIndicatorView.Style.white
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
         
         activityIndicator.startAnimating()
         
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         
         if let img : UIImage = imageResource.image {
             imageView.image = img

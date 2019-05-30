@@ -76,7 +76,7 @@ public class ImageViewer: NSObject {
         let imageView = UIImageView(frame : CGRect.zero)
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = false
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         imageView.backgroundColor = UIColor.clear;
         return imageView
     }()
@@ -190,7 +190,7 @@ extension ImageViewer {
     private func addOrientationChangeNotification() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onChangeStatusBarOrientationNotification(notification:)),
-                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                                               name: UIApplication.didChangeStatusBarOrientationNotification,
                                                object: nil)
         
     }
@@ -218,7 +218,7 @@ extension ImageViewer : UIGestureRecognizerDelegate {
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if (gestureRecognizer.view!.isKind(of: ImageView.self)){
             let translatedPoint = (gestureRecognizer as! UIPanGestureRecognizer).translation(in: gestureRecognizer.view)
-            return fabs(translatedPoint.y) > fabs(translatedPoint.x);
+            return abs(translatedPoint.y) > abs(translatedPoint.x);
         }
         return true
     }
@@ -353,15 +353,15 @@ extension ImageViewer {
         let translatedPoint = gesture.translation(in: currentItem)
         let newAlpha = CGFloat(1 - fabsf(Float(translatedPoint.y / configs.ImageViewerScreenHeight)))
         
-        if (gesture.state == UIGestureRecognizerState.began || gesture.state == UIGestureRecognizerState.changed){
+        if (gesture.state == UIGestureRecognizer.State.began || gesture.state == UIGestureRecognizer.State.changed){
             scrollView.isScrollEnabled = false
             currentItem.frame = CGRect(x: currentItem.frame.origin.x, y: translatedPoint.y, width: currentItem.frame.size.width, height: currentItem.frame.size.height)
             self.tabBar.frame = CGRect(x: 0, y: configs.ImageViewerScreenHeight - configs.ImageViewBarHeight*newAlpha, width: configs.ImageViewerScreenWidth, height: configs.ImageViewBarHeight)
             bgView.backgroundColor = configs.backgroudColor.withAlphaComponent(newAlpha)
-        }else if (gesture.state == UIGestureRecognizerState.ended ){
+        }else if (gesture.state == UIGestureRecognizer.State.ended ){
             
             scrollView.isScrollEnabled = true
-            if (fabs(translatedPoint.y) >= configs.ImageViewerScreenHeight*0.2){
+            if (abs(translatedPoint.y) >= configs.ImageViewerScreenHeight*0.2){
                 UIView.animate(withDuration: configs.ImageViewerAnimationDuriation, animations: { () -> Void in
                     self.bgView.backgroundColor = UIColor.clear
                     if (translatedPoint.y > 0){

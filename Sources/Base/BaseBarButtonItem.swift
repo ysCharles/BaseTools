@@ -51,7 +51,7 @@ public class BaseBarButtonItem: UIBarButtonItem {
         btn.setTitleColor(titleColor, for: .normal)
         
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        let attributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17)]
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
         
         let nsStr = title as NSString
         let frame = nsStr.boundingRect(with: CGSize(width:150,height:20), options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
